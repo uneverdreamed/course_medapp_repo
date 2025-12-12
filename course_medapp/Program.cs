@@ -286,8 +286,43 @@ namespace course_medapp
             return slots;
         }
     }
+    public class Department
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Location { get; set; }
+        public string PhoneNumber { get; set; }
+        public List<string> DoctorIds { get; set; }
 
-    
+        public Department()
+        {
+            Id = Guid.NewGuid().ToString();
+            DoctorIds = new List<string>();
+        }
+
+        public Department(string name, string location, string phone)
+        {
+            Id = Guid.NewGuid().ToString();
+            Name = name;
+            Location = location;
+            PhoneNumber = phone;
+            DoctorIds = new List<string>();
+        }
+
+        public void AddDoctor(string doctorId)
+        {
+            if (!DoctorIds.Contains(doctorId))
+                DoctorIds.Add(doctorId);
+        }
+
+        public void RemoveDoctor(string doctorId)
+        {
+            DoctorIds.Remove(doctorId);
+        }
+    }
+
+
 
     internal static class Program
     {
