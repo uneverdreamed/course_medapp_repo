@@ -154,6 +154,12 @@ namespace course_medapp
                 public bool IsWorkingDay { get; set; }
             }
 
+            public class TimeSlot
+            {
+                public DateTime DateTime { get; set; }
+                public bool IsAvailable { get; set; }
+            }
+
             internal static class Program
             {
                 /// <summary>
