@@ -119,6 +119,35 @@ namespace course_medapp
             return $"{base.GetInfo()}, Карта: {MedicalCardNumber}";
         }
     }
+    public class Doctor : Person
+    {
+        public string Specialization { get; set; }
+        public string LicenseNumber { get; set; }
+        public int ExperienceYears { get; set; }
+        public string DepartmentId { get; set; }
+        public Schedule Schedule { get; set; }
+
+        public Doctor() : base()
+        {
+            Schedule = new Schedule(Id);
+        }
+
+        public Doctor(string firstName, string lastName, string phone, DateTime dob,
+                      string specialization, string license, int experience, string deptId)
+            : base(firstName, lastName, phone, dob)
+        {
+            Specialization = specialization;
+            LicenseNumber = license;
+            ExperienceYears = experience;
+            DepartmentId = deptId;
+            Schedule = new Schedule(Id);
+        }
+
+        public override string GetInfo()
+        {
+            return $"Д-р {GetFullName()}, {Specialization}, стаж: {ExperienceYears} лет";
+        }
+    }
     public enum AppointmentStatus
     {
         Scheduled,
@@ -211,36 +240,18 @@ namespace course_medapp
                 };
             }
         }
-    }
-    public class Doctor : Person
-    {
-        public string Specialization { get; set; }
-        public string LicenseNumber { get; set; }
-        public int ExperienceYears { get; set; }
-        public string DepartmentId { get; set; }
-        public Schedule Schedule { get; set; }
-
-        public Doctor() : base()
+        public void SetWorkingHours(DayOfWeek day, TimeSpan start, TimeSpan end)
         {
-            Schedule = new Schedule(Id);
-        }
+            if (!WeekSchedule.ContainsKey(day))
+                WeekSchedule[day] = new WorkingHours();
 
-        public Doctor(string firstName, string lastName, string phone, DateTime dob,
-                      string specialization, string license, int experience, string deptId)
-            : base(firstName, lastName, phone, dob)
-        {
-            Specialization = specialization;
-            LicenseNumber = license;
-            ExperienceYears = experience;
-            DepartmentId = deptId;
-            Schedule = new Schedule(Id);
-        }
-
-        public override string GetInfo()
-        {
-            return $"Д-р {GetFullName()}, {Specialization}, стаж: {ExperienceYears} лет";
+            WeekSchedule[day].StartTime = start;
+            WeekSchedule[day].EndTime = end;
+            WeekSchedule[day].IsWorkingDay = true;
         }
     }
+
+    
 
     internal static class Program
     {
