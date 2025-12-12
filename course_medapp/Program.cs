@@ -390,6 +390,21 @@ namespace course_medapp.Services
             return File.Exists(filePath);
         }
     }
+    public class ApplicationData
+    {
+        public List<Patient> Patients { get; set; }
+        public List<Doctor> Doctors { get; set; }
+        public List<Appointment> Appointments { get; set; }
+        public List<Department> Departments { get; set; }
+
+        public ApplicationData()
+        {
+            Patients = new List<Patient>();
+            Doctors = new List<Doctor>();
+            Appointments = new List<Appointment>();
+            Departments = new List<Department>();
+        }
+    }
 }
 
 
