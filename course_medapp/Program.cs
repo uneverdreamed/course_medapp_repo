@@ -119,6 +119,13 @@ namespace course_medapp
             }
         }
 
+        public class TimeSlot
+        {
+            public DateTime DateTime { get; set; }
+            public bool IsAvailable { get; set; }
+        }
+
+
         internal static class Program
         {
             /// <summary>
