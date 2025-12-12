@@ -92,6 +92,33 @@ namespace course_medapp
             }
         }
 
+        public class Patient : Person
+        {
+            public string MedicalCardNumber { get; set; }
+            public string Address { get; set; }
+            public string InsuranceNumber { get; set; }
+            public MedicalCard MedicalCard { get; set; }
+
+            public Patient() : base()
+            {
+                MedicalCardNumber = $"MC-{DateTime.Now:yyyyMMdd}-{new Random().Next(1000, 9999)}";
+                MedicalCard = new MedicalCard(Id);
+            }
+
+            public Patient(string firstName, string lastName, string phone, DateTime dob, string address, string insurance)
+                : base(firstName, lastName, phone, dob)
+            {
+                MedicalCardNumber = $"MC-{DateTime.Now:yyyyMMdd}-{new Random().Next(1000, 9999)}";
+                Address = address;
+                InsuranceNumber = insurance;
+                MedicalCard = new MedicalCard(Id);
+            }
+            public override string GetInfo()
+            {
+                return $"{base.GetInfo()}, Карта: {MedicalCardNumber}";
+            }
+        }
+
         internal static class Program
         {
             /// <summary>
