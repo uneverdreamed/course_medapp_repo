@@ -162,6 +162,13 @@ namespace course_medapp
                     throw new InvalidOperationException("Невозможно отменить запись");
                 }
             }
+            public void Complete()
+            {
+                if (Status == AppointmentStatus.Scheduled)
+                {
+                    Status = AppointmentStatus.Completed;
+                }
+            }
         }
 
             public class WorkingHours
