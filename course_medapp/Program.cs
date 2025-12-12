@@ -146,6 +146,14 @@ namespace course_medapp
                 Status = AppointmentStatus.Scheduled;
                 CreatedDate = DateTime.Now;
             }
+
+            public class WorkingHours
+            {
+                public TimeSpan StartTime { get; set; }
+                public TimeSpan EndTime { get; set; }
+                public bool IsWorkingDay { get; set; }
+            }
+
             internal static class Program
             {
                 /// <summary>
