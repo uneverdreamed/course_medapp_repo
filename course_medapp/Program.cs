@@ -160,18 +160,46 @@ namespace course_medapp
                 public bool IsAvailable { get; set; }
             }
 
-            internal static class Program
+            public class Schedule
             {
-                /// <summary>
-                ///  The main entry point for the application.
-                /// </summary>
-                [STAThread]
-                static void Main()
+                public string DoctorId { get; set; }
+                public Dictionary<DayOfWeek, WorkingHours> WeekSchedule { get; set; }
+                public List<TimeSlot> AvailableSlots { get; private set; }
+
+                public Schedule(string doctorId)
                 {
-                    Application.SetHighDpiMode(HighDpiMode.SystemAware);
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new Form1());
+                    DoctorId = doctorId;
+                    WeekSchedule = new Dictionary<DayOfWeek, WorkingHours>();
+                    AvailableSlots = new List<TimeSlot>();
+                    InitializeDefaultSchedule();
+                }
+
+                private void InitializeDefaultSchedule()
+                {
+                    for (int i = 1; i <= 5; i++)
+                    {
+                        WeekSchedule[(DayOfWeek)i] = new WorkingHours
+                        {
+                            StartTime = new TimeSpan(9, 0, 0),
+                            EndTime = new TimeSpan(17, 0, 0),
+                            IsWorkingDay = true
+                        };
+                    }
+                }
+
+                internal static class Program
+                {
+                    /// <summary>
+                    ///  The main entry point for the application.
+                    /// </summary>
+                    [STAThread]
+                    static void Main()
+                    {
+                        Application.SetHighDpiMode(HighDpiMode.SystemAware);
+                        Application.EnableVisualStyles();
+                        Application.SetCompatibleTextRenderingDefault(false);
+                        Application.Run(new Form1());
+                    }
                 }
             }
         }
