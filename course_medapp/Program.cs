@@ -186,8 +186,38 @@ namespace course_medapp
                         };
                     }
                 }
+            }
+            public class Doctor : Person
+            {
+                public string Specialization { get; set; }
+                public string LicenseNumber { get; set; }
+                public int ExperienceYears { get; set; }
+                public string DepartmentId { get; set; }
+                public Schedule Schedule { get; set; }
 
-                internal static class Program
+                public Doctor() : base()
+                {
+                    Schedule = new Schedule(Id);
+                }
+
+                public Doctor(string firstName, string lastName, string phone, DateTime dob,
+                              string specialization, string license, int experience, string deptId)
+                    : base(firstName, lastName, phone, dob)
+                {
+                    Specialization = specialization;
+                    LicenseNumber = license;
+                    ExperienceYears = experience;
+                    DepartmentId = deptId;
+                    Schedule = new Schedule(Id);
+                }
+
+                public override string GetInfo()
+                {
+                    return $"Д-р {GetFullName()}, {Specialization}, стаж: {ExperienceYears} лет";
+                }
+            }
+
+            internal static class Program
                 {
                     /// <summary>
                     ///  The main entry point for the application.
@@ -204,4 +234,4 @@ namespace course_medapp
             }
         }
     }
-}
+
