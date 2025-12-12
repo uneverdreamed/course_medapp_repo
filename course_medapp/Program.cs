@@ -146,6 +146,12 @@ namespace course_medapp
                 Status = AppointmentStatus.Scheduled;
                 CreatedDate = DateTime.Now;
             }
+            public bool CanBeCancelled()
+            {
+                return Status == AppointmentStatus.Scheduled &&
+                       AppointmentDateTime > DateTime.Now.AddHours(2);
+            }
+        }
 
             public class WorkingHours
             {
@@ -233,5 +239,5 @@ namespace course_medapp
                 }
             }
         }
-    }
+
 
