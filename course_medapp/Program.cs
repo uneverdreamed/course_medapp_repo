@@ -405,6 +405,31 @@ namespace course_medapp.Services
             Departments = new List<Department>();
         }
     }
+    public class DataManager
+    {
+        private static DataManager _instance;
+        private static readonly object _lock = new object();
+
+        private readonly ISaveLoadService _saveLoadService;
+        private ApplicationData _data;
+
+        private const string DATA_FILE = "medical_system_data.json";
+        public static DataManager Instance‡Ô
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    lock (_lock)
+                    {
+                        if (_instance == null)
+                            _instance = new DataManager();
+                    }
+                }
+                return _instance;
+            }
+        }
+    }
 }
 
 
