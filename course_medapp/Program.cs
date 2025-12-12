@@ -41,7 +41,25 @@ namespace course_medapp
         {
             return $"{GetFullName()}, {GetAge()} лет, тел: {PhoneNumber}";
         }
+        public class MedicalRecord
+        {
+            public string Id { get; set; }
+            public DateTime VisitDate { get; set; }
+            public string DoctorId { get; set; }
+            public string DoctorName { get; set; }
+            public string Diagnosis { get; set; }
+            public string Treatment { get; set; }
+            public string Notes { get; set; }
+            public List<string> Prescriptions { get; set; }
 
+            public MedicalRecord()
+            {
+                Id = Guid.NewGuid().ToString();
+                VisitDate = DateTime.Now;
+                Prescriptions = new List<string>();
+            }
+        }
+       
         internal static class Program
         {
             /// <summary>
