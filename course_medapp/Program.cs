@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
-// using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System.Windows.Forms;
+using System.Xml;
+using JsonFormatting = Newtonsoft.Json.Formatting;
+
 
 namespace course_medapp
 {
@@ -331,6 +334,61 @@ namespace course_medapp.Services
         void SaveData<T>(T data, string fileName);
         T LoadData<T>(string fileName) where T : class, new();
         bool FileExists(string fileName);
+    }
+
+    public class JsonSaveLoadService : ISaveLoadService
+    {
+        private readonly string _dataDirectory;
+        private readonly JsonSerializerSettings _settings;
+        public JsonSaveLoadService(string dataDirectory = "Data")
+        {
+            _dataDirectory = dataDirectory;
+
+            _settings = new JsonSerializerSettings
+            {
+                Formatting = JsonFormatting.Indented,
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects,
+                TypeNameHandling = TypeNameHandling.Auto
+            };
+            if (!Directory.Exists(_dataDirectory))
+                Directory.CreateDirectory(_dataDirectory);
+        }
+        public void SaveData<T>(T data, string fileName)
+        {
+            try
+            {
+                string filePath = Path.Combine(_dataDirectory, fileName);
+                string jsonData = JsonConvert.SerializeObject(data, _settings);
+                File.WriteAllText(filePath, jsonData);
+            }
+            catch (Exception ex)
+            {
+                throw new IOException($"Ошибка сохранения данных: {ex.Message}", ex);
+            }
+        }
+        public T LoadData<T>(string fileName) where T : class, new()
+        {
+            try
+            {
+                string filePath = Path.Combine(_dataDirectory, fileName);
+
+                if (!File.Exists(filePath))
+                    return new T();
+
+                string jsonData = File.ReadAllText(filePath);
+                return JsonConvert.DeserializeObject<T>(jsonData, _settings) ?? new T();
+            }
+            catch (Exception ex)
+            {
+                throw new IOException($"Ошибка загрузки данных: {ex.Message}", ex);
+            }
+        }
+        public bool FileExists(string fileName)
+        {
+            string filePath = Path.Combine(_dataDirectory, fileName);
+            return File.Exists(filePath);
+        }
     }
 }
 
