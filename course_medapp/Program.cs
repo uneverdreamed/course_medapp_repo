@@ -118,32 +118,47 @@ namespace course_medapp
                 return $"{base.GetInfo()}, Карта: {MedicalCardNumber}";
             }
         }
-
-        public class TimeSlot
+        public enum AppointmentStatus
         {
-            public DateTime DateTime { get; set; }
-            public bool IsAvailable { get; set; }
+            Scheduled,
+            Completed,
+            Cancelled,
+            NoShow
         }
 
-        public class WorkingHours
+        public class Appointment
         {
-            public TimeSpan StartTime { get; set; }
-            public TimeSpan EndTime { get; set; }
-            public bool IsWorkingDay { get; set; }
-        }
+            public string Id { get; set; }
+            public string PatientId { get; set; }
+            public string PatientName { get; set; }
+            public string DoctorId { get; set; }
+            public string DoctorName { get; set; }
+            public DateTime AppointmentDateTime { get; set; }
+            public int DurationMinutes { get; set; }
+            public AppointmentStatus Status { get; set; }
+            public string Notes { get; set; }
+            public DateTime CreatedDate { get; set; }
 
-        internal static class Program
-        {
-            /// <summary>
-            ///  The main entry point for the application.
-            /// </summary>
-            [STAThread]
-            static void Main()
+            public Appointment()
             {
-                Application.SetHighDpiMode(HighDpiMode.SystemAware);
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                Id = Guid.NewGuid().ToString();
+                DurationMinutes = 30;
+                Status = AppointmentStatus.Scheduled;
+                CreatedDate = DateTime.Now;
+            }
+            internal static class Program
+            {
+                /// <summary>
+                ///  The main entry point for the application.
+                /// </summary>
+                [STAThread]
+                static void Main()
+                {
+                    Application.SetHighDpiMode(HighDpiMode.SystemAware);
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Form1());
+                }
             }
         }
     }
