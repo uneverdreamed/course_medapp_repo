@@ -326,7 +326,12 @@ namespace course_medapp
 
 namespace course_medapp.Services
 {
-
+    public interface ISaveLoadService
+    {
+        void SaveData<T>(T data, string fileName);
+        T LoadData<T>(string fileName) where T : class, new();
+        bool FileExists(string fileName);
+    }
 }
 
 
