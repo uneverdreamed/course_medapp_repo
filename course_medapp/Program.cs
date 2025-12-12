@@ -249,6 +249,42 @@ namespace course_medapp
             WeekSchedule[day].EndTime = end;
             WeekSchedule[day].IsWorkingDay = true;
         }
+        public bool IsWorkingDay(DateTime date)
+        {
+            return WeekSchedule.ContainsKey(date.DayOfWeek) &&
+                   WeekSchedule[date.DayOfWeek].IsWorkingDay;
+        }
+        public List<TimeSlot> GenerateAvailableSlots(DateTime date, List<Appointment> existingAppointments, int slotDuration = 30)
+        {
+            var slots = new List<TimeSlot>();
+
+            if (!IsWorkingDay(date))
+                return slots;
+
+            var workHours = WeekSchedule[date.DayOfWeek];
+            var currentTime = workHours.StartTime;
+
+            while (currentTime.Add(TimeSpan.FromMinutes(slotDuration)) <= workHours.EndTime)
+            {
+                var slotDateTime = date.Date.Add(currentTime);
+
+                bool isOccupied = existingAppointments.Any(a =>
+                    a.DoctorId == DoctorId &&
+                    a.Status == AppointmentStatus.Scheduled &&
+                    a.AppointmentDateTime <= slotDateTime &&
+                    slotDateTime < a.AppointmentDateTime.AddMinutes(a.DurationMinutes));
+
+                slots.Add(new TimeSlot
+                {
+                    DateTime = slotDateTime,
+                    IsAvailable = !isOccupied && slotDateTime > DateTime.Now
+                });
+
+                currentTime = currentTime.Add(TimeSpan.FromMinutes(slotDuration));
+            }
+
+            return slots;
+        }
     }
 
     
