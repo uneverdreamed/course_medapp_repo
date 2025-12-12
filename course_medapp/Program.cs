@@ -151,6 +151,17 @@ namespace course_medapp
                 return Status == AppointmentStatus.Scheduled &&
                        AppointmentDateTime > DateTime.Now.AddHours(2);
             }
+            public void Cancel()
+            {
+                if (CanBeCancelled())
+                {
+                    Status = AppointmentStatus.Cancelled;
+                }
+                else
+                {
+                    throw new InvalidOperationException("Невозможно отменить запись");
+                }
+            }
         }
 
             public class WorkingHours
