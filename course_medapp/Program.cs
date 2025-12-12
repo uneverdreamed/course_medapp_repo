@@ -125,6 +125,12 @@ namespace course_medapp
             public bool IsAvailable { get; set; }
         }
 
+        public class WorkingHours
+        {
+            public TimeSpan StartTime { get; set; }
+            public TimeSpan EndTime { get; set; }
+            public bool IsWorkingDay { get; set; }
+        }
 
         internal static class Program
         {
