@@ -438,6 +438,64 @@ namespace course_medapp.Services
         public IReadOnlyList<Doctor> Doctors => _data.Doctors.AsReadOnly();
         public IReadOnlyList<Appointment> Appointments => _data.Appointments.AsReadOnly();
         public IReadOnlyList<Department> Departments => _data.Departments.AsReadOnly();
+
+        
+        // методы для работы с пациентами
+        public void AddPatient(Patient patient)
+        {
+            if (patient == null)
+                throw new ArgumentNullException(nameof(patient));
+
+            _data.Patients.Add(patient);
+            SaveAllData();
+        }
+
+        public void UpdatePatient(Patient patient)
+        {
+            var existing = _data.Patients.FirstOrDefault(p => p.Id == patient.Id);
+            if (existing == null)
+                throw new InvalidOperationException("Пациент не найден");
+
+            int index = _data.Patients.IndexOf(existing);
+            _data.Patients[index] = patient;
+            SaveAllData();
+        }
+        public void DeletePatient(string patientId)
+        {
+            var patient = _data.Patients.FirstOrDefault(p => p.Id == patientId);
+            if (patient == null)
+                throw new InvalidOperationException("Пациент не найден");
+
+            // отмена всех будущих записей пациента
+            var futureAppointments = _data.Appointments
+                .Where(a => a.PatientId == patientId &&
+                           a.Status == AppointmentStatus.Scheduled &&
+                           a.AppointmentDateTime > DateTime.Now)
+                .ToList();
+
+            foreach (var apt in futureAppointments)
+            {
+                apt.Status = AppointmentStatus.Cancelled;
+            }
+
+            _data.Patients.Remove(patient);
+            SaveAllData();
+        }
+        public Patient GetPatientById(string id)
+        {
+            return _data.Patients.FirstOrDefault(p => p.Id == id);
+        }
+
+        public List<Patient> SearchPatients(string searchText)
+        {
+            searchText = searchText.ToLower();
+            return _data.Patients
+                .Where(p => p.FirstName.ToLower().Contains(searchText) ||
+                           p.LastName.ToLower().Contains(searchText) ||
+                           p.MedicalCardNumber.ToLower().Contains(searchText))
+                .ToList();
+        }
+
     }
 }
 
