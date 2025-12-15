@@ -632,7 +632,38 @@ namespace course_medapp.Services
                 .ToList();
         }
 
+        // методы для работы с отделениями
+        public void AddDepartment(Department department)
+        {
+            if (department == null)
+                throw new ArgumentNullException(nameof(department));
 
+            _data.Departments.Add(department);
+            SaveAllData();
+        }
+        public void UpdateDepartment(Department department)
+        {
+            var existing = _data.Departments.FirstOrDefault(d => d.Id == department.Id);
+            if (existing == null)
+                throw new InvalidOperationException("Отделение не найдено");
+
+            int index = _data.Departments.IndexOf(existing);
+            _data.Departments[index] = department;
+            SaveAllData();
+        }
+        public void DeleteDepartment(string departmentId)
+        {
+            var department = _data.Departments.FirstOrDefault(d => d.Id == departmentId);
+            if (department == null)
+                throw new InvalidOperationException("Отделение не найдено");
+
+            _data.Departments.Remove(department);
+            SaveAllData();
+        }
+        public Department GetDepartmentById(string id)
+        {
+            return _data.Departments.FirstOrDefault(d => d.Id == id);
+        }
     }
 }
 
