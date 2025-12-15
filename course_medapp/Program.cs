@@ -429,6 +429,12 @@ namespace course_medapp.Services
                 return _instance;
             }
         }
+        private DataManager()
+        {
+            _saveLoadService = new JsonSaveLoadService();
+            LoadAllData();
+        }
+
     }
 }
 
