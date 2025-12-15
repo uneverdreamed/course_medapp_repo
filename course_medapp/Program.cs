@@ -664,6 +664,40 @@ namespace course_medapp.Services
         {
             return _data.Departments.FirstOrDefault(d => d.Id == id);
         }
+
+        // методы сохранения и загрузки
+        private void SaveAllData()
+        {
+            try
+            {
+                _saveLoadService.SaveData(_data, DATA_FILE);
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"Не удалось сохранить данные: {ex.Message}", ex);
+            }
+        }
+        private void LoadAllData()
+        {
+            try
+            {
+                _data = _saveLoadService.LoadData<ApplicationData>(DATA_FILE);
+
+                if (_data == null)
+                    _data = new ApplicationData();
+
+                // Создаём тестовые данные, если база пустая
+                if (!_data.Patients.Any() && !_data.Doctors.Any())
+                {
+                    InitializeTestData();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException($"Не удалось загрузить данные: {ex.Message}", ex);
+            }
+        }
+
     }
 }
 
