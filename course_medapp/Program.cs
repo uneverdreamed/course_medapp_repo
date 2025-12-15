@@ -557,6 +557,82 @@ namespace course_medapp.Services
                 .OrderBy(s => s)
                 .ToList();
         }
+
+        // методы для работы с записями
+        public void AddAppointment(Appointment appointment)
+        {
+            if (appointment == null)
+                throw new ArgumentNullException(nameof(appointment));
+
+            // Проверяем, нет ли конфликта времени
+            bool hasConflict = _data.Appointments.Any(a =>
+                a.DoctorId == appointment.DoctorId &&
+                a.Status == AppointmentStatus.Scheduled &&
+                a.AppointmentDateTime < appointment.AppointmentDateTime.AddMinutes(appointment.DurationMinutes) &&
+                appointment.AppointmentDateTime < a.AppointmentDateTime.AddMinutes(a.DurationMinutes));
+
+            if (hasConflict)
+                throw new InvalidOperationException("Это время уже занято");
+
+            _data.Appointments.Add(appointment);
+            SaveAllData();
+        }
+        public void CancelAppointment(string appointmentId)
+        {
+            var appointment = _data.Appointments.FirstOrDefault(a => a.Id == appointmentId);
+            if (appointment == null)
+                throw new InvalidOperationException("Запись не найдена");
+
+            appointment.Cancel();
+            SaveAllData();
+        }
+
+        public void CompleteAppointment(string appointmentId)
+        {
+            var appointment = _data.Appointments.FirstOrDefault(a => a.Id == appointmentId);
+            if (appointment == null)
+                throw new InvalidOperationException("Запись не найдена");
+
+            appointment.Complete();
+            SaveAllData();
+        }
+
+        public List<Appointment> GetPatientAppointments(string patientId)
+        {
+            return _data.Appointments
+                .Where(a => a.PatientId == patientId)
+                .OrderByDescending(a => a.AppointmentDateTime)
+                .ToList();
+        }
+
+        public List<Appointment> GetDoctorAppointments(string doctorId, DateTime? date = null)
+        {
+            var query = _data.Appointments.Where(a => a.DoctorId == doctorId);
+
+            if (date.HasValue)
+            {
+                var startDate = date.Value.Date;
+                var endDate = startDate.AddDays(1);
+                query = query.Where(a => a.AppointmentDateTime >= startDate && a.AppointmentDateTime < endDate);
+            }
+
+            return query.OrderBy(a => a.AppointmentDateTime).ToList();
+        }
+
+        public List<Appointment> GetUpcomingAppointments(int daysAhead = 7)
+        {
+            var startDate = DateTime.Now;
+            var endDate = startDate.AddDays(daysAhead);
+
+            return _data.Appointments
+                .Where(a => a.Status == AppointmentStatus.Scheduled &&
+                           a.AppointmentDateTime >= startDate &&
+                           a.AppointmentDateTime <= endDate)
+                .OrderBy(a => a.AppointmentDateTime)
+                .ToList();
+        }
+
+
     }
 }
 
