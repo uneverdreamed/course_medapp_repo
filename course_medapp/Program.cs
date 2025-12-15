@@ -6,11 +6,22 @@ using Newtonsoft.Json;
 using System.Windows.Forms;
 using System.Xml;
 using JsonFormatting = Newtonsoft.Json.Formatting;
+using course_medapp.Forms;
 
 
 namespace course_medapp
 {
-    public abstract class Person
+    static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm()); 
+        }
+    }
+        public abstract class Person
     {
         public string Id { get; set; }
         public string FirstName { get; set; }
