@@ -439,7 +439,7 @@ namespace course_medapp.Services
         public IReadOnlyList<Appointment> Appointments => _data.Appointments.AsReadOnly();
         public IReadOnlyList<Department> Departments => _data.Departments.AsReadOnly();
 
-        
+
         // методы для работы с пациентами
         public void AddPatient(Patient patient)
         {
@@ -705,7 +705,24 @@ namespace course_medapp.Services
             var neurology = new Department("Неврология", "Корпус Б, 3 этаж", "123-45-68");
             var therapy = new Department("Терапия", "Корпус А, 1 этаж", "123-45-69");
 
+            _data.Departments.AddRange(new[] { cardiology, neurology, therapy });
+
+            // врачи
+            var doctor1 = new Doctor("Иван", "Петров", "+7-900-123-45-67",
+             new DateTime(1975, 5, 15), "Кардиолог", "LIC-12345", 20, cardiology.Id);
+
+            var doctor2 = new Doctor("Мария", "Сидорова", "+7-900-123-45-68",
+                new DateTime(1980, 8, 22), "Невролог", "LIC-12346", 15, neurology.Id);
+
+            var doctor3 = new Doctor("Сергей", "Иванов", "+7-900-123-45-69",
+                new DateTime(1985, 3, 10), "Терапевт", "LIC-12347", 10, therapy.Id);
+
+            _data.Doctors.AddRange(new[] { doctor1, doctor2, doctor3 });
+            cardiology.AddDoctor(doctor1.Id);
+            neurology.AddDoctor(doctor2.Id);
+            therapy.AddDoctor(doctor3.Id);
         }
+    }
 }
 
 
