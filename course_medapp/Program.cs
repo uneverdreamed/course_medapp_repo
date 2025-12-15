@@ -698,7 +698,14 @@ namespace course_medapp.Services
             }
         }
 
-    }
+        private void InitializeTestData()
+        {
+            // отделения
+            var cardiology = new Department("Кардиология", "Корпус А, 2 этаж", "123-45-67");
+            var neurology = new Department("Неврология", "Корпус Б, 3 этаж", "123-45-68");
+            var therapy = new Department("Терапия", "Корпус А, 1 этаж", "123-45-69");
+
+        }
 }
 
 
