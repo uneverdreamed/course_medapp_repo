@@ -721,6 +721,16 @@ namespace course_medapp.Services
             cardiology.AddDoctor(doctor1.Id);
             neurology.AddDoctor(doctor2.Id);
             therapy.AddDoctor(doctor3.Id);
+
+            // пациенты
+            var patient1 = new Patient("Алексей", "Смирнов", "+7-900-111-22-33",
+                new DateTime(1990, 1, 15), "ул. Ленина, д. 10", "INS-001");
+
+            var patient2 = new Patient("Елена", "Кузнецова", "+7-900-111-22-34",
+                new DateTime(1985, 6, 20), "ул. Пушкина, д. 20", "INS-002");
+
+            _data.Patients.AddRange(new[] { patient1, patient2 });
+
         }
     }
 }
