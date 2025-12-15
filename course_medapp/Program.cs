@@ -731,6 +731,12 @@ namespace course_medapp.Services
 
             _data.Patients.AddRange(new[] { patient1, patient2 });
 
+            SaveAllData();
+        }
+        public void ResetToTestData()
+        {
+            _data = new ApplicationData();
+            InitializeTestData();
         }
     }
 }
