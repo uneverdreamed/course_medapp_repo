@@ -495,7 +495,68 @@ namespace course_medapp.Services
                            p.MedicalCardNumber.ToLower().Contains(searchText))
                 .ToList();
         }
+        // методы для работы с врачами
+        public void AddDoctor(Doctor doctor)
+        {
+            if (doctor == null)
+                throw new ArgumentNullException(nameof(doctor));
 
+            _data.Doctors.Add(doctor);
+            SaveAllData();
+        }
+
+        public void UpdateDoctor(Doctor doctor)
+        {
+            var existing = _data.Doctors.FirstOrDefault(d => d.Id == doctor.Id);
+            if (existing == null)
+                throw new InvalidOperationException("Врач не найден");
+
+            int index = _data.Doctors.IndexOf(existing);
+            _data.Doctors[index] = doctor;
+            SaveAllData();
+        }
+
+        public void DeleteDoctor(string doctorId)
+        {
+            var doctor = _data.Doctors.FirstOrDefault(d => d.Id == doctorId);
+            if (doctor == null)
+                throw new InvalidOperationException("Врач не найден");
+
+            // отмена всех будущих записей к врачу
+            var futureAppointments = _data.Appointments
+                .Where(a => a.DoctorId == doctorId &&
+                           a.Status == AppointmentStatus.Scheduled &&
+                           a.AppointmentDateTime > DateTime.Now)
+                .ToList();
+
+            foreach (var apt in futureAppointments)
+            {
+                apt.Status = AppointmentStatus.Cancelled;
+            }
+
+            _data.Doctors.Remove(doctor);
+            SaveAllData();
+        }
+        public Doctor GetDoctorById(string id)
+        {
+            return _data.Doctors.FirstOrDefault(d => d.Id == id);
+        }
+
+        public List<Doctor> GetDoctorsBySpecialization(string specialization)
+        {
+            return _data.Doctors
+                .Where(d => d.Specialization.Equals(specialization, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        public List<string> GetAllSpecializations()
+        {
+            return _data.Doctors
+                .Select(d => d.Specialization)
+                .Distinct()
+                .OrderBy(s => s)
+                .ToList();
+        }
     }
 }
 
