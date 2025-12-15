@@ -434,7 +434,10 @@ namespace course_medapp.Services
             _saveLoadService = new JsonSaveLoadService();
             LoadAllData();
         }
-
+        public IReadOnlyList<Patient> Patients => _data.Patients.AsReadOnly();
+        public IReadOnlyList<Doctor> Doctors => _data.Doctors.AsReadOnly();
+        public IReadOnlyList<Appointment> Appointments => _data.Appointments.AsReadOnly();
+        public IReadOnlyList<Department> Departments => _data.Departments.AsReadOnly();
     }
 }
 
