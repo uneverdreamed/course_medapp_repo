@@ -1,4 +1,4 @@
-﻿namespace MedicalAppointmentSystem.Forms
+﻿namespace course_medapp.Forms
 {
     partial class MainForm
     {
