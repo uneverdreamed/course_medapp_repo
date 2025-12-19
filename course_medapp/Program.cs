@@ -425,7 +425,7 @@ namespace course_medapp.Services
         private ApplicationData _data;
 
         private const string DATA_FILE = "medical_system_data.json";
-        public static DataManager Instance‡Ô
+        public static DataManager Instance
         {
             get
             {
