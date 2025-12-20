@@ -90,5 +90,10 @@ namespace course_medapp.Forms
         {
 
         }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

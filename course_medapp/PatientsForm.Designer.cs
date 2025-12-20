@@ -13,232 +13,253 @@
             base.Dispose(disposing);
         }
 
+        #region Windows Form Designer generated code
+
         private void InitializeComponent()
         {
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelSearch = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.dgvPatients = new System.Windows.Forms.DataGridView();
-            this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnViewHistory = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.panelTop.SuspendLayout();
-            this.panelSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).BeginInit();
-            this.panelButtons.SuspendLayout();
-            this.SuspendLayout();
+            panelTop = new System.Windows.Forms.Panel();
+            lblTitle = new System.Windows.Forms.Label();
+            panelSearch = new System.Windows.Forms.Panel();
+            txtSearch = new System.Windows.Forms.TextBox();
+            btnSearch = new System.Windows.Forms.Button();
+            dgvPatients = new System.Windows.Forms.DataGridView();
+            panelButtons = new System.Windows.Forms.Panel();
+            lblTotal = new System.Windows.Forms.Label();
+            btnClose = new System.Windows.Forms.Button();
+            btnViewHistory = new System.Windows.Forms.Button();
+            btnDelete = new System.Windows.Forms.Button();
+            btnEdit = new System.Windows.Forms.Button();
+            btnAdd = new System.Windows.Forms.Button();
+            panelTop.SuspendLayout();
+            panelSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPatients).BeginInit();
+            panelButtons.SuspendLayout();
+            SuspendLayout();
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.panelTop.Controls.Add(this.lblTitle);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1000, 60);
-            this.panelTop.TabIndex = 0;
+            panelTop.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelTop.Controls.Add(lblTitle);
+            panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new System.Drawing.Size(1924, 115);
+            panelTop.TabIndex = 0;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(20, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(322, 32);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Управление пациентами";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitle.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblTitle.Location = new System.Drawing.Point(50, 29);
+            lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new System.Drawing.Size(454, 48);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Управление пациентами";
             // 
             // panelSearch
             // 
-            this.panelSearch.BackColor = System.Drawing.Color.White;
-            this.panelSearch.Controls.Add(this.btnSearch);
-            this.panelSearch.Controls.Add(this.txtSearch);
-            this.panelSearch.Controls.Add(this.lblSearch);
-            this.panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSearch.Location = new System.Drawing.Point(0, 60);
-            this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1000, 60);
-            this.panelSearch.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(450, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 30);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "🔍 Найти";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            panelSearch.BackColor = System.Drawing.Color.White;
+            panelSearch.Controls.Add(txtSearch);
+            panelSearch.Controls.Add(btnSearch);
+            panelSearch.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSearch.Location = new System.Drawing.Point(0, 115);
+            panelSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelSearch.Name = "panelSearch";
+            panelSearch.Size = new System.Drawing.Size(1924, 154);
+            panelSearch.TabIndex = 1;
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtSearch.Location = new System.Drawing.Point(100, 15);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(330, 27);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            txtSearch.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtSearch.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtSearch.ForeColor = System.Drawing.Color.Gray;
+            txtSearch.Location = new System.Drawing.Point(50, 54);
+            txtSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(883, 38);
+            txtSearch.TabIndex = 0;
+            txtSearch.Text = "Поиск";
+            txtSearch.Enter += txtSearch_Enter;
+            txtSearch.KeyPress += txtSearch_KeyPress;
+            txtSearch.Leave += txtSearch_Leave;
             // 
-            // lblSearch
+            // btnSearch
             // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblSearch.Location = new System.Drawing.Point(20, 18);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(58, 20);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Поиск:";
+            btnSearch.BackColor = System.Drawing.Color.Black;
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSearch.ForeColor = System.Drawing.Color.White;
+            btnSearch.Location = new System.Drawing.Point(950, 38);
+            btnSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new System.Drawing.Size(367, 77);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Найти";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // dgvPatients
             // 
-            this.dgvPatients.AllowUserToAddRows = false;
-            this.dgvPatients.AllowUserToDeleteRows = false;
-            this.dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPatients.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatients.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPatients.Location = new System.Drawing.Point(0, 120);
-            this.dgvPatients.MultiSelect = false;
-            this.dgvPatients.Name = "dgvPatients";
-            this.dgvPatients.ReadOnly = true;
-            this.dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatients.Size = new System.Drawing.Size(1000, 380);
-            this.dgvPatients.TabIndex = 2;
+            dgvPatients.AllowUserToAddRows = false;
+            dgvPatients.AllowUserToDeleteRows = false;
+            dgvPatients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvPatients.BackgroundColor = System.Drawing.Color.White;
+            dgvPatients.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPatients.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgvPatients.Location = new System.Drawing.Point(0, 269);
+            dgvPatients.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            dgvPatients.MultiSelect = false;
+            dgvPatients.Name = "dgvPatients";
+            dgvPatients.ReadOnly = true;
+            dgvPatients.RowHeadersVisible = false;
+            dgvPatients.RowHeadersWidth = 62;
+            dgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvPatients.Size = new System.Drawing.Size(1924, 646);
+            dgvPatients.TabIndex = 2;
             // 
             // panelButtons
             // 
-            this.panelButtons.BackColor = System.Drawing.Color.White;
-            this.panelButtons.Controls.Add(this.btnClose);
-            this.panelButtons.Controls.Add(this.btnViewHistory);
-            this.panelButtons.Controls.Add(this.btnDelete);
-            this.panelButtons.Controls.Add(this.btnEdit);
-            this.panelButtons.Controls.Add(this.btnAdd);
-            this.panelButtons.Controls.Add(this.lblTotal);
-            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 500);
-            this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(1000, 70);
-            this.panelButtons.TabIndex = 3;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(870, 15);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 40);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Закрыть";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnViewHistory
-            // 
-            this.btnViewHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
-            this.btnViewHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewHistory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnViewHistory.ForeColor = System.Drawing.Color.White;
-            this.btnViewHistory.Location = new System.Drawing.Point(420, 15);
-            this.btnViewHistory.Name = "btnViewHistory";
-            this.btnViewHistory.Size = new System.Drawing.Size(130, 40);
-            this.btnViewHistory.TabIndex = 4;
-            this.btnViewHistory.Text = "📋 История";
-            this.btnViewHistory.UseVisualStyleBackColor = false;
-            this.btnViewHistory.Click += new System.EventHandler(this.btnViewHistory_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(280, 15);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(120, 40);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "❌ Удалить";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(140, 15);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(120, 40);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "✏️ Изменить";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(20, 15);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 40);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "➕ Добавить";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            panelButtons.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            panelButtons.Controls.Add(lblTotal);
+            panelButtons.Controls.Add(btnClose);
+            panelButtons.Controls.Add(btnViewHistory);
+            panelButtons.Controls.Add(btnDelete);
+            panelButtons.Controls.Add(btnEdit);
+            panelButtons.Controls.Add(btnAdd);
+            panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            panelButtons.Location = new System.Drawing.Point(0, 915);
+            panelButtons.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelButtons.Name = "panelButtons";
+            panelButtons.Size = new System.Drawing.Size(1924, 135);
+            panelButtons.TabIndex = 3;
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.lblTotal.Location = new System.Drawing.Point(600, 25);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(154, 20);
-            this.lblTotal.TabIndex = 0;
-            this.lblTotal.Text = "Всего пациентов: 0";
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTotal.ForeColor = System.Drawing.Color.White;
+            lblTotal.Location = new System.Drawing.Point(1407, 48);
+            lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new System.Drawing.Size(207, 30);
+            lblTotal.TabIndex = 5;
+            lblTotal.Text = "Всего пациентов: 0";
+            // 
+            // btnClose
+            // 
+            btnClose.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnClose.ForeColor = System.Drawing.Color.White;
+            btnClose.Location = new System.Drawing.Point(1660, 25);
+            btnClose.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(250, 77);
+            btnClose.TabIndex = 4;
+            btnClose.Text = "Закрыть";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
+            // 
+            // btnViewHistory
+            // 
+            btnViewHistory.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnViewHistory.FlatAppearance.BorderSize = 0;
+            btnViewHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnViewHistory.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnViewHistory.ForeColor = System.Drawing.Color.Black;
+            btnViewHistory.Location = new System.Drawing.Point(1100, 29);
+            btnViewHistory.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnViewHistory.Name = "btnViewHistory";
+            btnViewHistory.Size = new System.Drawing.Size(267, 77);
+            btnViewHistory.TabIndex = 3;
+            btnViewHistory.Text = "История";
+            btnViewHistory.UseVisualStyleBackColor = false;
+            btnViewHistory.Click += btnViewHistory_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnDelete.ForeColor = System.Drawing.Color.Black;
+            btnDelete.Location = new System.Drawing.Point(750, 29);
+            btnDelete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(267, 77);
+            btnDelete.TabIndex = 2;
+            btnDelete.Text = "Удалить";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnEdit
+            // 
+            btnEdit.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnEdit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnEdit.ForeColor = System.Drawing.Color.Black;
+            btnEdit.Location = new System.Drawing.Point(400, 29);
+            btnEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new System.Drawing.Size(267, 77);
+            btnEdit.TabIndex = 1;
+            btnEdit.Text = "Изменить";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAdd.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnAdd.ForeColor = System.Drawing.Color.Black;
+            btnAdd.Location = new System.Drawing.Point(50, 29);
+            btnAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new System.Drawing.Size(267, 77);
+            btnAdd.TabIndex = 0;
+            btnAdd.Text = "Добавить";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // PatientsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 570);
-            this.Controls.Add(this.dgvPatients);
-            this.Controls.Add(this.panelButtons);
-            this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelTop);
-            this.Name = "PatientsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Пациенты";
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.panelSearch.ResumeLayout(false);
-            this.panelSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatients)).EndInit();
-            this.panelButtons.ResumeLayout(false);
-            this.panelButtons.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1924, 1050);
+            Controls.Add(dgvPatients);
+            Controls.Add(panelButtons);
+            Controls.Add(panelSearch);
+            Controls.Add(panelTop);
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            Name = "PatientsForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Пациенты";
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            panelSearch.ResumeLayout(false);
+            panelSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPatients).EndInit();
+            panelButtons.ResumeLayout(false);
+            panelButtons.PerformLayout();
+            ResumeLayout(false);
         }
+
+        #endregion
 
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvPatients;
         private System.Windows.Forms.Panel panelButtons;

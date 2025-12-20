@@ -83,8 +83,9 @@
             panelMenu.Location = new System.Drawing.Point(0, 115);
             panelMenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new System.Drawing.Size(583, 935);
+            panelMenu.Size = new System.Drawing.Size(394, 935);
             panelMenu.TabIndex = 1;
+            panelMenu.Paint += panelMenu_Paint;
             // 
             // btnPatients
             // 
@@ -113,7 +114,7 @@
             btnDoctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnDoctors.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnDoctors.ForeColor = System.Drawing.Color.White;
-            btnDoctors.Location = new System.Drawing.Point(0, 173);
+            btnDoctors.Location = new System.Drawing.Point(0, 161);
             btnDoctors.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             btnDoctors.Name = "btnDoctors";
             btnDoctors.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
@@ -183,16 +184,16 @@
             // 
             // btnExit
             // 
+            btnExit.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             btnExit.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
             btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnExit.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnExit.ForeColor = System.Drawing.Color.White;
-            btnExit.Location = new System.Drawing.Point(67, 1058);
-            btnExit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnExit.Location = new System.Drawing.Point(40, 560);
             btnExit.Name = "btnExit";
-            btnExit.Size = new System.Drawing.Size(450, 115);
+            btnExit.Size = new System.Drawing.Size(270, 60);
             btnExit.TabIndex = 5;
             btnExit.Text = "Выход";
             btnExit.UseVisualStyleBackColor = false;
@@ -203,10 +204,10 @@
             panelMain.BackColor = System.Drawing.Color.White;
             panelMain.Controls.Add(panelStats);
             panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            panelMain.Location = new System.Drawing.Point(583, 115);
+            panelMain.Location = new System.Drawing.Point(394, 115);
             panelMain.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             panelMain.Name = "panelMain";
-            panelMain.Size = new System.Drawing.Size(1341, 935);
+            panelMain.Size = new System.Drawing.Size(1530, 935);
             panelMain.TabIndex = 2;
             // 
             // panelStats
@@ -360,7 +361,7 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelMenu;
@@ -369,7 +370,7 @@
         private System.Windows.Forms.Button btnAppointments;
         private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button btnDepartments;
-        private System.Windows.Forms.Button btnExit;
+
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelStats;
         private System.Windows.Forms.Panel panelStatPatients;

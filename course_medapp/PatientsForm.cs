@@ -104,7 +104,7 @@ namespace course_medapp.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtSearch.Text.Trim();
-            if (string.IsNullOrEmpty(searchText))
+            if (string.IsNullOrEmpty(searchText) || searchText == "Поиск")
             {
                 LoadPatients();
                 return;
@@ -146,6 +146,24 @@ namespace course_medapp.Forms
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnSearch_Click(sender, e);
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Поиск")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                txtSearch.Text = "Поиск";
+                txtSearch.ForeColor = System.Drawing.Color.Gray;
             }
         }
 
