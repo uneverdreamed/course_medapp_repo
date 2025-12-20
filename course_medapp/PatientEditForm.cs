@@ -21,6 +21,12 @@ namespace course_medapp.Forms
         public PatientEditForm()
         {
             InitializeComponent();
+            var screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            if (this.Height > screenHeight)
+            {
+                this.Height = screenHeight - 50;
+                this.AutoScroll = true;
+            }
             dataManager = DataManager.Instance;
             isEditMode = false;
             this.Text = "Добавить пациента";
@@ -46,8 +52,8 @@ namespace course_medapp.Forms
             dtpBirthDate.Value = patient.DateOfBirth;
             txtAddress.Text = patient.Address;
             txtInsurance.Text = patient.InsuranceNumber;
-            txtMedCardNumber.Text = patient.MedicalCardNumber;
-            txtMedCardNumber.Enabled = false;
+            txtMedCard.Text = patient.MedicalCardNumber;
+            txtMedCard.Enabled = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -138,6 +144,11 @@ namespace course_medapp.Forms
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void PatientEditForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
