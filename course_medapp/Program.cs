@@ -26,6 +26,7 @@ namespace course_medapp
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string MiddleName { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
 
@@ -34,17 +35,23 @@ namespace course_medapp
             Id = Guid.NewGuid().ToString();
         }
 
-        protected Person(string firstName, string lastName, string phone, DateTime dob)
+        protected Person(string firstName, string lastName, string phone, DateTime dob, string middleName = null)
         {
             Id = Guid.NewGuid().ToString();
             FirstName = firstName;
             LastName = lastName;
+            MiddleName = middleName;
             PhoneNumber = phone;
             DateOfBirth = dob;
         }
 
-        public string GetFullName() => $"{LastName} {FirstName}";
-
+        public string GetFullName()
+        {
+            if (string.IsNullOrWhiteSpace(MiddleName))
+                return $"{LastName} {FirstName}";
+            else
+                return $"{LastName} {FirstName} {MiddleName}";
+        }
         public int GetAge()
         {
             var today = DateTime.Today;
@@ -121,8 +128,8 @@ namespace course_medapp
             MedicalCard = new MedicalCard(Id);
         }
 
-        public Patient(string firstName, string lastName, string phone, DateTime dob, string address, string insurance)
-            : base(firstName, lastName, phone, dob)
+        public Patient(string firstName, string lastName, string phone, DateTime dob, string address, string insurance, string middleName = null)
+            : base(firstName, lastName, phone, dob, middleName)
         {
             MedicalCardNumber = $"MC-{DateTime.Now:yyyyMMdd}-{new Random().Next(1000, 9999)}";
             Address = address;
@@ -148,8 +155,8 @@ namespace course_medapp
         }
 
         public Doctor(string firstName, string lastName, string phone, DateTime dob,
-                      string specialization, string license, int experience, string deptId)
-            : base(firstName, lastName, phone, dob)
+                      string specialization, string license, int experience, string deptId, string middleName = null)
+            : base(firstName, lastName, phone, dob, middleName)
         {
             Specialization = specialization;
             LicenseNumber = license;
