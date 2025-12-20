@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using course_medapp.Services;
+using course_medapp;
 
 namespace course_medapp.Forms
 {
@@ -19,11 +20,11 @@ namespace course_medapp.Forms
         private void UpdateStatistics()
         {
             // Обновляем статистику на главном экране
-            lblTotalPatients.Text = $"Пациентов: {dataManager.Patients.Count}";
-            lblTotalDoctors.Text = $"Врачей: {dataManager.Doctors.Count}";
+            lblPatientsValue.Text = dataManager.Patients.Count.ToString();
+            lblDoctorsValue.Text = dataManager.Doctors.Count.ToString();
 
             var upcomingCount = dataManager.GetUpcomingAppointments(7).Count;
-            lblUpcomingAppointments.Text = $"Записей на неделю: {upcomingCount}";
+            lblAppointmentsValue.Text = upcomingCount.ToString();
         }
 
         // Обработчики кнопок главного меню
@@ -68,6 +69,26 @@ namespace course_medapp.Forms
             {
                 Application.Exit();
             }
+        }
+
+        private void panelStatDoctors_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblPatientsTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDoctorsTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

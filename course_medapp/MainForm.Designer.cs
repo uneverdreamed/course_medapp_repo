@@ -17,236 +17,346 @@
 
         private void InitializeComponent()
         {
-            this.panelHeader = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnDepartments = new System.Windows.Forms.Button();
-            this.btnSchedule = new System.Windows.Forms.Button();
-            this.btnAppointments = new System.Windows.Forms.Button();
-            this.btnDoctors = new System.Windows.Forms.Button();
-            this.btnPatients = new System.Windows.Forms.Button();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.groupBoxStats = new System.Windows.Forms.GroupBox();
-            this.lblUpcomingAppointments = new System.Windows.Forms.Label();
-            this.lblTotalDoctors = new System.Windows.Forms.Label();
-            this.lblTotalPatients = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.panelHeader.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            this.panelMain.SuspendLayout();
-            this.groupBoxStats.SuspendLayout();
-            this.SuspendLayout();
+            panelHeader = new System.Windows.Forms.Panel();
+            lblTitle = new System.Windows.Forms.Label();
+            panelMenu = new System.Windows.Forms.Panel();
+            btnPatients = new System.Windows.Forms.Button();
+            btnDoctors = new System.Windows.Forms.Button();
+            btnAppointments = new System.Windows.Forms.Button();
+            btnSchedule = new System.Windows.Forms.Button();
+            btnDepartments = new System.Windows.Forms.Button();
+            btnExit = new System.Windows.Forms.Button();
+            panelMain = new System.Windows.Forms.Panel();
+            panelStats = new System.Windows.Forms.Panel();
+            panelStatAppointments = new System.Windows.Forms.Panel();
+            lblAppointmentsValue = new System.Windows.Forms.Label();
+            lblAppointmentsTitle = new System.Windows.Forms.Label();
+            panelStatDoctors = new System.Windows.Forms.Panel();
+            lblDoctorsValue = new System.Windows.Forms.Label();
+            lblDoctorsTitle = new System.Windows.Forms.Label();
+            panelStatPatients = new System.Windows.Forms.Panel();
+            lblPatientsValue = new System.Windows.Forms.Label();
+            lblPatientsTitle = new System.Windows.Forms.Label();
+            panelHeader.SuspendLayout();
+            panelMenu.SuspendLayout();
+            panelMain.SuspendLayout();
+            panelStats.SuspendLayout();
+            panelStatAppointments.SuspendLayout();
+            panelStatDoctors.SuspendLayout();
+            panelStatPatients.SuspendLayout();
+            SuspendLayout();
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.panelHeader.Controls.Add(this.lblTitle);
-            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1000, 80);
-            this.panelHeader.TabIndex = 0;
+            panelHeader.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelHeader.Controls.Add(lblTitle);
+            panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            panelHeader.Location = new System.Drawing.Point(0, 0);
+            panelHeader.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new System.Drawing.Size(1924, 115);
+            panelHeader.TabIndex = 0;
+            panelHeader.Paint += panelHeader_Paint;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(20, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(569, 45);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Система записи к врачу";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitle.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblTitle.Location = new System.Drawing.Point(50, 23);
+            lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new System.Drawing.Size(460, 54);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Медицинская система";
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.panelMenu.Controls.Add(this.btnExit);
-            this.panelMenu.Controls.Add(this.btnDepartments);
-            this.panelMenu.Controls.Add(this.btnSchedule);
-            this.panelMenu.Controls.Add(this.btnAppointments);
-            this.panelMenu.Controls.Add(this.btnDoctors);
-            this.panelMenu.Controls.Add(this.btnPatients);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 80);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 520);
-            this.panelMenu.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(0, 460);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(200, 50);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "🚪 Выход";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnDepartments
-            // 
-            this.btnDepartments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnDepartments.FlatAppearance.BorderSize = 0;
-            this.btnDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepartments.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnDepartments.ForeColor = System.Drawing.Color.White;
-            this.btnDepartments.Location = new System.Drawing.Point(0, 200);
-            this.btnDepartments.Name = "btnDepartments";
-            this.btnDepartments.Size = new System.Drawing.Size(200, 50);
-            this.btnDepartments.TabIndex = 4;
-            this.btnDepartments.Text = "🏥 Отделения";
-            this.btnDepartments.UseVisualStyleBackColor = false;
-            this.btnDepartments.Click += new System.EventHandler(this.btnDepartments_Click);
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnSchedule.FlatAppearance.BorderSize = 0;
-            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchedule.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Location = new System.Drawing.Point(0, 150);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(200, 50);
-            this.btnSchedule.TabIndex = 3;
-            this.btnSchedule.Text = "📅 Расписание";
-            this.btnSchedule.UseVisualStyleBackColor = false;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
-            // 
-            // btnAppointments
-            // 
-            this.btnAppointments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnAppointments.FlatAppearance.BorderSize = 0;
-            this.btnAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppointments.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnAppointments.ForeColor = System.Drawing.Color.White;
-            this.btnAppointments.Location = new System.Drawing.Point(0, 100);
-            this.btnAppointments.Name = "btnAppointments";
-            this.btnAppointments.Size = new System.Drawing.Size(200, 50);
-            this.btnAppointments.TabIndex = 2;
-            this.btnAppointments.Text = "📝 Записи на приём";
-            this.btnAppointments.UseVisualStyleBackColor = false;
-            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
-            // 
-            // btnDoctors
-            // 
-            this.btnDoctors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnDoctors.FlatAppearance.BorderSize = 0;
-            this.btnDoctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoctors.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnDoctors.ForeColor = System.Drawing.Color.White;
-            this.btnDoctors.Location = new System.Drawing.Point(0, 50);
-            this.btnDoctors.Name = "btnDoctors";
-            this.btnDoctors.Size = new System.Drawing.Size(200, 50);
-            this.btnDoctors.TabIndex = 1;
-            this.btnDoctors.Text = "👨‍⚕️ Врачи";
-            this.btnDoctors.UseVisualStyleBackColor = false;
-            this.btnDoctors.Click += new System.EventHandler(this.btnDoctors_Click);
+            panelMenu.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            panelMenu.Controls.Add(btnPatients);
+            panelMenu.Controls.Add(btnDoctors);
+            panelMenu.Controls.Add(btnAppointments);
+            panelMenu.Controls.Add(btnSchedule);
+            panelMenu.Controls.Add(btnDepartments);
+            panelMenu.Controls.Add(btnExit);
+            panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            panelMenu.Location = new System.Drawing.Point(0, 115);
+            panelMenu.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new System.Drawing.Size(583, 935);
+            panelMenu.TabIndex = 1;
             // 
             // btnPatients
             // 
-            this.btnPatients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.btnPatients.FlatAppearance.BorderSize = 0;
-            this.btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPatients.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnPatients.ForeColor = System.Drawing.Color.White;
-            this.btnPatients.Location = new System.Drawing.Point(0, 0);
-            this.btnPatients.Name = "btnPatients";
-            this.btnPatients.Size = new System.Drawing.Size(200, 50);
-            this.btnPatients.TabIndex = 0;
-            this.btnPatients.Text = "👤 Пациенты";
-            this.btnPatients.UseVisualStyleBackColor = false;
-            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
+            btnPatients.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            btnPatients.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnPatients.FlatAppearance.BorderSize = 0;
+            btnPatients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPatients.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnPatients.ForeColor = System.Drawing.Color.White;
+            btnPatients.Location = new System.Drawing.Point(0, 38);
+            btnPatients.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnPatients.Name = "btnPatients";
+            btnPatients.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            btnPatients.Size = new System.Drawing.Size(583, 135);
+            btnPatients.TabIndex = 0;
+            btnPatients.Text = "Пациенты";
+            btnPatients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnPatients.UseVisualStyleBackColor = false;
+            btnPatients.Click += btnPatients_Click;
+            // 
+            // btnDoctors
+            // 
+            btnDoctors.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            btnDoctors.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnDoctors.FlatAppearance.BorderSize = 0;
+            btnDoctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDoctors.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDoctors.ForeColor = System.Drawing.Color.White;
+            btnDoctors.Location = new System.Drawing.Point(0, 173);
+            btnDoctors.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnDoctors.Name = "btnDoctors";
+            btnDoctors.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            btnDoctors.Size = new System.Drawing.Size(583, 135);
+            btnDoctors.TabIndex = 1;
+            btnDoctors.Text = "Врачи";
+            btnDoctors.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnDoctors.UseVisualStyleBackColor = false;
+            btnDoctors.Click += btnDoctors_Click;
+            // 
+            // btnAppointments
+            // 
+            btnAppointments.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            btnAppointments.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnAppointments.FlatAppearance.BorderSize = 0;
+            btnAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAppointments.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAppointments.ForeColor = System.Drawing.Color.White;
+            btnAppointments.Location = new System.Drawing.Point(0, 308);
+            btnAppointments.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnAppointments.Name = "btnAppointments";
+            btnAppointments.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            btnAppointments.Size = new System.Drawing.Size(583, 135);
+            btnAppointments.TabIndex = 2;
+            btnAppointments.Text = "Записи";
+            btnAppointments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnAppointments.UseVisualStyleBackColor = false;
+            btnAppointments.Click += btnAppointments_Click;
+            // 
+            // btnSchedule
+            // 
+            btnSchedule.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            btnSchedule.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSchedule.FlatAppearance.BorderSize = 0;
+            btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSchedule.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnSchedule.ForeColor = System.Drawing.Color.White;
+            btnSchedule.Location = new System.Drawing.Point(0, 442);
+            btnSchedule.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnSchedule.Name = "btnSchedule";
+            btnSchedule.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            btnSchedule.Size = new System.Drawing.Size(583, 135);
+            btnSchedule.TabIndex = 3;
+            btnSchedule.Text = "Расписание";
+            btnSchedule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnSchedule.UseVisualStyleBackColor = false;
+            btnSchedule.Click += btnSchedule_Click;
+            // 
+            // btnDepartments
+            // 
+            btnDepartments.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            btnDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnDepartments.FlatAppearance.BorderSize = 0;
+            btnDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDepartments.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDepartments.ForeColor = System.Drawing.Color.White;
+            btnDepartments.Location = new System.Drawing.Point(0, 577);
+            btnDepartments.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnDepartments.Name = "btnDepartments";
+            btnDepartments.Padding = new System.Windows.Forms.Padding(33, 0, 0, 0);
+            btnDepartments.Size = new System.Drawing.Size(583, 135);
+            btnDepartments.TabIndex = 4;
+            btnDepartments.Text = "Отделения";
+            btnDepartments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnDepartments.UseVisualStyleBackColor = false;
+            btnDepartments.Click += btnDepartments_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
+            btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnExit.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnExit.ForeColor = System.Drawing.Color.White;
+            btnExit.Location = new System.Drawing.Point(67, 1058);
+            btnExit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new System.Drawing.Size(450, 115);
+            btnExit.TabIndex = 5;
+            btnExit.Text = "Выход";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // panelMain
             // 
-            this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
-            this.panelMain.Controls.Add(this.groupBoxStats);
-            this.panelMain.Controls.Add(this.lblWelcome);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(200, 80);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(800, 520);
-            this.panelMain.TabIndex = 2;
+            panelMain.BackColor = System.Drawing.Color.White;
+            panelMain.Controls.Add(panelStats);
+            panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelMain.Location = new System.Drawing.Point(583, 115);
+            panelMain.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new System.Drawing.Size(1341, 935);
+            panelMain.TabIndex = 2;
             // 
-            // groupBoxStats
+            // panelStats
             // 
-            this.groupBoxStats.Controls.Add(this.lblUpcomingAppointments);
-            this.groupBoxStats.Controls.Add(this.lblTotalDoctors);
-            this.groupBoxStats.Controls.Add(this.lblTotalPatients);
-            this.groupBoxStats.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.groupBoxStats.Location = new System.Drawing.Point(50, 150);
-            this.groupBoxStats.Name = "groupBoxStats";
-            this.groupBoxStats.Size = new System.Drawing.Size(700, 200);
-            this.groupBoxStats.TabIndex = 1;
-            this.groupBoxStats.TabStop = false;
-            this.groupBoxStats.Text = "Статистика";
+            panelStats.Controls.Add(panelStatAppointments);
+            panelStats.Controls.Add(panelStatDoctors);
+            panelStats.Controls.Add(panelStatPatients);
+            panelStats.Location = new System.Drawing.Point(83, 192);
+            panelStats.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelStats.Name = "panelStats";
+            panelStats.Size = new System.Drawing.Size(1250, 865);
+            panelStats.TabIndex = 0;
             // 
-            // lblUpcomingAppointments
+            // panelStatAppointments
             // 
-            this.lblUpcomingAppointments.AutoSize = true;
-            this.lblUpcomingAppointments.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblUpcomingAppointments.Location = new System.Drawing.Point(30, 130);
-            this.lblUpcomingAppointments.Name = "lblUpcomingAppointments";
-            this.lblUpcomingAppointments.Size = new System.Drawing.Size(230, 25);
-            this.lblUpcomingAppointments.TabIndex = 2;
-            this.lblUpcomingAppointments.Text = "Записей на неделю: 0";
+            panelStatAppointments.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelStatAppointments.Controls.Add(lblAppointmentsValue);
+            panelStatAppointments.Controls.Add(lblAppointmentsTitle);
+            panelStatAppointments.Location = new System.Drawing.Point(862, 296);
+            panelStatAppointments.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelStatAppointments.Name = "panelStatAppointments";
+            panelStatAppointments.Size = new System.Drawing.Size(290, 212);
+            panelStatAppointments.TabIndex = 2;
             // 
-            // lblTotalDoctors
+            // lblAppointmentsValue
             // 
-            this.lblTotalDoctors.AutoSize = true;
-            this.lblTotalDoctors.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblTotalDoctors.Location = new System.Drawing.Point(30, 85);
-            this.lblTotalDoctors.Name = "lblTotalDoctors";
-            this.lblTotalDoctors.Size = new System.Drawing.Size(106, 25);
-            this.lblTotalDoctors.TabIndex = 1;
-            this.lblTotalDoctors.Text = "Врачей: 0";
+            lblAppointmentsValue.AutoSize = true;
+            lblAppointmentsValue.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblAppointmentsValue.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblAppointmentsValue.Location = new System.Drawing.Point(112, 87);
+            lblAppointmentsValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblAppointmentsValue.Name = "lblAppointmentsValue";
+            lblAppointmentsValue.Size = new System.Drawing.Size(74, 86);
+            lblAppointmentsValue.TabIndex = 1;
+            lblAppointmentsValue.Text = "4";
+            lblAppointmentsValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTotalPatients
+            // lblAppointmentsTitle
             // 
-            this.lblTotalPatients.AutoSize = true;
-            this.lblTotalPatients.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblTotalPatients.Location = new System.Drawing.Point(30, 40);
-            this.lblTotalPatients.Name = "lblTotalPatients";
-            this.lblTotalPatients.Size = new System.Drawing.Size(142, 25);
-            this.lblTotalPatients.TabIndex = 0;
-            this.lblTotalPatients.Text = "Пациентов: 0";
+            lblAppointmentsTitle.AutoSize = true;
+            lblAppointmentsTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblAppointmentsTitle.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblAppointmentsTitle.Location = new System.Drawing.Point(69, 26);
+            lblAppointmentsTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblAppointmentsTitle.Name = "lblAppointmentsTitle";
+            lblAppointmentsTitle.Size = new System.Drawing.Size(156, 45);
+            lblAppointmentsTitle.TabIndex = 0;
+            lblAppointmentsTitle.Text = "Записей:";
+            lblAppointmentsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblWelcome
+            // panelStatDoctors
             // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblWelcome.Location = new System.Drawing.Point(45, 40);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(546, 32);
-            this.lblWelcome.TabIndex = 0;
-            this.lblWelcome.Text = "Добро пожаловать в систему управления";
+            panelStatDoctors.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelStatDoctors.Controls.Add(lblDoctorsValue);
+            panelStatDoctors.Controls.Add(lblDoctorsTitle);
+            panelStatDoctors.Location = new System.Drawing.Point(458, 296);
+            panelStatDoctors.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelStatDoctors.Name = "panelStatDoctors";
+            panelStatDoctors.Size = new System.Drawing.Size(290, 212);
+            panelStatDoctors.TabIndex = 1;
+            // 
+            // lblDoctorsValue
+            // 
+            lblDoctorsValue.AutoSize = true;
+            lblDoctorsValue.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblDoctorsValue.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblDoctorsValue.Location = new System.Drawing.Point(107, 87);
+            lblDoctorsValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDoctorsValue.Name = "lblDoctorsValue";
+            lblDoctorsValue.Size = new System.Drawing.Size(74, 86);
+            lblDoctorsValue.TabIndex = 1;
+            lblDoctorsValue.Text = "3";
+            lblDoctorsValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDoctorsTitle
+            // 
+            lblDoctorsTitle.AutoSize = true;
+            lblDoctorsTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblDoctorsTitle.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblDoctorsTitle.Location = new System.Drawing.Point(73, 26);
+            lblDoctorsTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDoctorsTitle.Name = "lblDoctorsTitle";
+            lblDoctorsTitle.Size = new System.Drawing.Size(143, 45);
+            lblDoctorsTitle.TabIndex = 0;
+            lblDoctorsTitle.Text = "Врачей:";
+            lblDoctorsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblDoctorsTitle.Click += lblDoctorsTitle_Click;
+            // 
+            // panelStatPatients
+            // 
+            panelStatPatients.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelStatPatients.Controls.Add(lblPatientsValue);
+            panelStatPatients.Controls.Add(lblPatientsTitle);
+            panelStatPatients.Location = new System.Drawing.Point(56, 296);
+            panelStatPatients.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelStatPatients.Name = "panelStatPatients";
+            panelStatPatients.Size = new System.Drawing.Size(290, 212);
+            panelStatPatients.TabIndex = 0;
+            // 
+            // lblPatientsValue
+            // 
+            lblPatientsValue.AutoSize = true;
+            lblPatientsValue.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblPatientsValue.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblPatientsValue.Location = new System.Drawing.Point(104, 87);
+            lblPatientsValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblPatientsValue.Name = "lblPatientsValue";
+            lblPatientsValue.Size = new System.Drawing.Size(74, 86);
+            lblPatientsValue.TabIndex = 1;
+            lblPatientsValue.Text = "2";
+            lblPatientsValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblPatientsTitle
+            // 
+            lblPatientsTitle.AutoSize = true;
+            lblPatientsTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblPatientsTitle.ForeColor = System.Drawing.Color.FromArgb(33, 33, 33);
+            lblPatientsTitle.Location = new System.Drawing.Point(40, 26);
+            lblPatientsTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblPatientsTitle.Name = "lblPatientsTitle";
+            lblPatientsTitle.Size = new System.Drawing.Size(202, 45);
+            lblPatientsTitle.TabIndex = 0;
+            lblPatientsTitle.Text = "Пациентов:";
+            lblPatientsTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblPatientsTitle.Click += lblPatientsTitle_Click;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.panelMain);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.panelHeader);
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Медицинская система - Главная";
-            this.panelHeader.ResumeLayout(false);
-            this.panelHeader.PerformLayout();
-            this.panelMenu.ResumeLayout(false);
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
-            this.groupBoxStats.ResumeLayout(false);
-            this.groupBoxStats.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1924, 1050);
+            Controls.Add(panelMain);
+            Controls.Add(panelMenu);
+            Controls.Add(panelHeader);
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            Name = "MainForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Медицинская система - Главная";
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelMenu.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
+            panelStats.ResumeLayout(false);
+            panelStatAppointments.ResumeLayout(false);
+            panelStatAppointments.PerformLayout();
+            panelStatDoctors.ResumeLayout(false);
+            panelStatDoctors.PerformLayout();
+            panelStatPatients.ResumeLayout(false);
+            panelStatPatients.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -261,10 +371,15 @@
         private System.Windows.Forms.Button btnDepartments;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.GroupBox groupBoxStats;
-        private System.Windows.Forms.Label lblTotalPatients;
-        private System.Windows.Forms.Label lblTotalDoctors;
-        private System.Windows.Forms.Label lblUpcomingAppointments;
+        private System.Windows.Forms.Panel panelStats;
+        private System.Windows.Forms.Panel panelStatPatients;
+        private System.Windows.Forms.Label lblPatientsValue;
+        private System.Windows.Forms.Label lblPatientsTitle;
+        private System.Windows.Forms.Panel panelStatDoctors;
+        private System.Windows.Forms.Label lblDoctorsValue;
+        private System.Windows.Forms.Label lblDoctorsTitle;
+        private System.Windows.Forms.Panel panelStatAppointments;
+        private System.Windows.Forms.Label lblAppointmentsValue;
+        private System.Windows.Forms.Label lblAppointmentsTitle;
     }
 }
