@@ -83,5 +83,15 @@ namespace course_medapp.Forms
         {
 
         }
+
+        private void panelRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblDoctors_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,7 +39,7 @@
             // 
             // panelTop
             // 
-            panelTop.BackColor = System.Drawing.Color.FromArgb(230, 126, 34);
+            panelTop.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
             panelTop.Controls.Add(lblTitle);
             panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             panelTop.Location = new System.Drawing.Point(0, 0);
@@ -51,12 +51,12 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblTitle.ForeColor = System.Drawing.Color.White;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitle.ForeColor = System.Drawing.Color.Black;
             lblTitle.Location = new System.Drawing.Point(33, 29);
             lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new System.Drawing.Size(209, 48);
+            lblTitle.Size = new System.Drawing.Size(190, 45);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Отделения";
             // 
@@ -101,7 +101,7 @@
             // 
             // panelRight
             // 
-            panelRight.BackColor = System.Drawing.Color.White;
+            panelRight.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
             panelRight.Controls.Add(lstDoctors);
             panelRight.Controls.Add(lblDoctors);
             panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -111,6 +111,7 @@
             panelRight.Padding = new System.Windows.Forms.Padding(17, 19, 17, 19);
             panelRight.Size = new System.Drawing.Size(577, 808);
             panelRight.TabIndex = 0;
+            panelRight.Paint += panelRight_Paint;
             // 
             // lstDoctors
             // 
@@ -126,14 +127,17 @@
             // 
             // lblDoctors
             // 
+            lblDoctors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             lblDoctors.Dock = System.Windows.Forms.DockStyle.Top;
             lblDoctors.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblDoctors.ForeColor = System.Drawing.Color.White;
             lblDoctors.Location = new System.Drawing.Point(17, 19);
             lblDoctors.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             lblDoctors.Name = "lblDoctors";
             lblDoctors.Size = new System.Drawing.Size(543, 48);
             lblDoctors.TabIndex = 0;
             lblDoctors.Text = "Врачи отделения:";
+            lblDoctors.Click += lblDoctors_Click;
             // 
             // panelBottom
             // 
@@ -149,9 +153,9 @@
             // 
             // btnClose
             // 
-            btnClose.BackColor = System.Drawing.Color.FromArgb(127, 140, 141);
+            btnClose.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
             btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btnClose.ForeColor = System.Drawing.Color.White;
             btnClose.Location = new System.Drawing.Point(1283, 19);
             btnClose.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
