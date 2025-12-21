@@ -268,7 +268,7 @@ namespace course_medapp.Forms
             btnSave.Name = "btnSave";
             btnSave.Size = new System.Drawing.Size(267, 77);
             btnSave.TabIndex = 0;
-            btnSave.Text = "Сохранить";
+            btnSave.Text = "💾 Сохранить";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 

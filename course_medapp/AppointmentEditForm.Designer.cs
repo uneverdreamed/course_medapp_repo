@@ -226,6 +226,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(917, 769);
             Controls.Add(btnCancel);
