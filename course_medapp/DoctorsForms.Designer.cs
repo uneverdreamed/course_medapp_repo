@@ -17,117 +17,154 @@
 
         private void InitializeComponent()
         {
-            this.dgvDoctors = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).BeginInit();
-            this.SuspendLayout();
+            dgvDoctors = new System.Windows.Forms.DataGridView();
+            btnAdd = new System.Windows.Forms.Button();
+            btnEdit = new System.Windows.Forms.Button();
+            btnDelete = new System.Windows.Forms.Button();
+            btnClose = new System.Windows.Forms.Button();
+            lblTotal = new System.Windows.Forms.Label();
+            txtSearch = new System.Windows.Forms.TextBox();
+            btnSearch = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDoctors).BeginInit();
+            SuspendLayout();
             // 
             // dgvDoctors
             // 
-            this.dgvDoctors.AllowUserToAddRows = false;
-            this.dgvDoctors.AllowUserToDeleteRows = false;
-            this.dgvDoctors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDoctors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDoctors.Location = new System.Drawing.Point(12, 60);
-            this.dgvDoctors.MultiSelect = false;
-            this.dgvDoctors.Name = "dgvDoctors";
-            this.dgvDoctors.ReadOnly = true;
-            this.dgvDoctors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDoctors.Size = new System.Drawing.Size(976, 400);
-            this.dgvDoctors.TabIndex = 0;
+            dgvDoctors.AllowUserToAddRows = false;
+            dgvDoctors.AllowUserToDeleteRows = false;
+            dgvDoctors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDoctors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDoctors.Location = new System.Drawing.Point(20, 115);
+            dgvDoctors.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            dgvDoctors.MultiSelect = false;
+            dgvDoctors.Name = "dgvDoctors";
+            dgvDoctors.ReadOnly = true;
+            dgvDoctors.RowHeadersWidth = 62;
+            dgvDoctors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvDoctors.Size = new System.Drawing.Size(1627, 769);
+            dgvDoctors.TabIndex = 0;
+            dgvDoctors.CellContentClick += dgvDoctors_CellContentClick;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 15);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 30);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            btnAdd.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnAdd.ForeColor = System.Drawing.Color.Black;
+            btnAdd.Location = new System.Drawing.Point(20, 29);
+            btnAdd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new System.Drawing.Size(167, 58);
+            btnAdd.TabIndex = 1;
+            btnAdd.Text = "Добавить";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(120, 15);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 30);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Изменить";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            btnEdit.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnEdit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnEdit.ForeColor = System.Drawing.Color.Black;
+            btnEdit.Location = new System.Drawing.Point(200, 29);
+            btnEdit.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new System.Drawing.Size(167, 58);
+            btnEdit.TabIndex = 2;
+            btnEdit.Text = "Изменить";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(228, 15);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 30);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            btnDelete.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnDelete.ForeColor = System.Drawing.Color.Black;
+            btnDelete.Location = new System.Drawing.Point(380, 29);
+            btnDelete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(167, 58);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Удалить";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(888, 470);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 30);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Закрыть";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnClose.ForeColor = System.Drawing.Color.White;
+            btnClose.Location = new System.Drawing.Point(1480, 904);
+            btnClose.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(167, 58);
+            btnClose.TabIndex = 4;
+            btnClose.Text = "Закрыть";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(12, 478);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(96, 13);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "Всего врачей: 0";
+            lblTotal.AutoSize = true;
+            lblTotal.Location = new System.Drawing.Point(20, 919);
+            lblTotal.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new System.Drawing.Size(140, 25);
+            lblTotal.TabIndex = 5;
+            lblTotal.Text = "Всего врачей: 0";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(500, 20);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(300, 20);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            txtSearch.Location = new System.Drawing.Point(833, 38);
+            txtSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new System.Drawing.Size(497, 31);
+            txtSearch.TabIndex = 6;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(810, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 30);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Поиск";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            btnSearch.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSearch.ForeColor = System.Drawing.Color.White;
+            btnSearch.Location = new System.Drawing.Point(1350, 29);
+            btnSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new System.Drawing.Size(125, 58);
+            btnSearch.TabIndex = 7;
+            btnSearch.Text = "Поиск";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // DoctorsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 520);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvDoctors);
-            this.Name = "DoctorsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Врачи";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDoctors)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1667, 1000);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
+            Controls.Add(lblTotal);
+            Controls.Add(btnClose);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvDoctors);
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            Name = "DoctorsForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Врачи";
+            Load += DoctorsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvDoctors).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

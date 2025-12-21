@@ -142,5 +142,15 @@ namespace course_medapp.Forms
         {
             this.Close();
         }
+
+        private void DoctorsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDoctors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
