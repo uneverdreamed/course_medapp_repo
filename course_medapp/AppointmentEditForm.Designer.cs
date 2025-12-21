@@ -15,227 +15,246 @@
 
         private void InitializeComponent()
         {
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblDoctor = new System.Windows.Forms.Label();
-            this.cmbDoctor = new System.Windows.Forms.ComboBox();
-            this.lblPatient = new System.Windows.Forms.Label();
-            this.cmbPatient = new System.Windows.Forms.ComboBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.lblDuration = new System.Windows.Forms.Label();
-            this.numDuration = new System.Windows.Forms.NumericUpDown();
-            this.lblNotes = new System.Windows.Forms.Label();
-            this.txtNotes = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
-            this.SuspendLayout();
+            panelTop = new System.Windows.Forms.Panel();
+            lblTitle = new System.Windows.Forms.Label();
+            lblDoctor = new System.Windows.Forms.Label();
+            cmbDoctor = new System.Windows.Forms.ComboBox();
+            lblPatient = new System.Windows.Forms.Label();
+            cmbPatient = new System.Windows.Forms.ComboBox();
+            lblDate = new System.Windows.Forms.Label();
+            dtpDate = new System.Windows.Forms.DateTimePicker();
+            lblTime = new System.Windows.Forms.Label();
+            dtpTime = new System.Windows.Forms.DateTimePicker();
+            lblDuration = new System.Windows.Forms.Label();
+            numDuration = new System.Windows.Forms.NumericUpDown();
+            lblNotes = new System.Windows.Forms.Label();
+            txtNotes = new System.Windows.Forms.TextBox();
+            btnSave = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            panelTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numDuration).BeginInit();
+            SuspendLayout();
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.panelTop.Controls.Add(this.lblTitle);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(550, 60);
-            this.panelTop.TabIndex = 0;
+            panelTop.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelTop.Controls.Add(lblTitle);
+            panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new System.Drawing.Size(917, 115);
+            panelTop.TabIndex = 0;
+            panelTop.Paint += panelTop_Paint;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(20, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(239, 30);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Новая запись на приём";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitle.ForeColor = System.Drawing.Color.Black;
+            lblTitle.Location = new System.Drawing.Point(33, 29);
+            lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new System.Drawing.Size(390, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Новая запись на приём";
+            lblTitle.Click += lblTitle_Click;
             // 
             // lblDoctor
             // 
-            this.lblDoctor.AutoSize = true;
-            this.lblDoctor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDoctor.Location = new System.Drawing.Point(30, 80);
-            this.lblDoctor.Name = "lblDoctor";
-            this.lblDoctor.Size = new System.Drawing.Size(44, 19);
-            this.lblDoctor.TabIndex = 1;
-            this.lblDoctor.Text = "Врач:";
+            lblDoctor.AutoSize = true;
+            lblDoctor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblDoctor.Location = new System.Drawing.Point(50, 154);
+            lblDoctor.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDoctor.Name = "lblDoctor";
+            lblDoctor.Size = new System.Drawing.Size(60, 28);
+            lblDoctor.TabIndex = 1;
+            lblDoctor.Text = "Врач:";
             // 
             // cmbDoctor
             // 
-            this.cmbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDoctor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbDoctor.FormattingEnabled = true;
-            this.cmbDoctor.Location = new System.Drawing.Point(150, 77);
-            this.cmbDoctor.Name = "cmbDoctor";
-            this.cmbDoctor.Size = new System.Drawing.Size(370, 25);
-            this.cmbDoctor.TabIndex = 2;
+            cmbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbDoctor.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cmbDoctor.FormattingEnabled = true;
+            cmbDoctor.Location = new System.Drawing.Point(250, 148);
+            cmbDoctor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            cmbDoctor.Name = "cmbDoctor";
+            cmbDoctor.Size = new System.Drawing.Size(614, 36);
+            cmbDoctor.TabIndex = 2;
             // 
             // lblPatient
             // 
-            this.lblPatient.AutoSize = true;
-            this.lblPatient.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblPatient.Location = new System.Drawing.Point(30, 120);
-            this.lblPatient.Name = "lblPatient";
-            this.lblPatient.Size = new System.Drawing.Size(68, 19);
-            this.lblPatient.TabIndex = 3;
-            this.lblPatient.Text = "Пациент:";
+            lblPatient.AutoSize = true;
+            lblPatient.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPatient.Location = new System.Drawing.Point(50, 231);
+            lblPatient.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblPatient.Name = "lblPatient";
+            lblPatient.Size = new System.Drawing.Size(94, 28);
+            lblPatient.TabIndex = 3;
+            lblPatient.Text = "Пациент:";
             // 
             // cmbPatient
             // 
-            this.cmbPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPatient.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbPatient.FormattingEnabled = true;
-            this.cmbPatient.Location = new System.Drawing.Point(150, 117);
-            this.cmbPatient.Name = "cmbPatient";
-            this.cmbPatient.Size = new System.Drawing.Size(370, 25);
-            this.cmbPatient.TabIndex = 4;
+            cmbPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbPatient.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cmbPatient.FormattingEnabled = true;
+            cmbPatient.Location = new System.Drawing.Point(250, 225);
+            cmbPatient.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            cmbPatient.Name = "cmbPatient";
+            cmbPatient.Size = new System.Drawing.Size(614, 36);
+            cmbPatient.TabIndex = 4;
             // 
             // lblDate
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDate.Location = new System.Drawing.Point(30, 160);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(43, 19);
-            this.lblDate.TabIndex = 5;
-            this.lblDate.Text = "Дата:";
+            lblDate.AutoSize = true;
+            lblDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblDate.Location = new System.Drawing.Point(50, 308);
+            lblDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new System.Drawing.Size(58, 28);
+            lblDate.TabIndex = 5;
+            lblDate.Text = "Дата:";
             // 
             // dtpDate
             // 
-            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(150, 157);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(150, 25);
-            this.dtpDate.TabIndex = 6;
+            dtpDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dtpDate.Location = new System.Drawing.Point(250, 302);
+            dtpDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            dtpDate.Name = "dtpDate";
+            dtpDate.Size = new System.Drawing.Size(247, 34);
+            dtpDate.TabIndex = 6;
             // 
             // lblTime
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTime.Location = new System.Drawing.Point(320, 160);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(54, 19);
-            this.lblTime.TabIndex = 7;
-            this.lblTime.Text = "Время:";
+            lblTime.AutoSize = true;
+            lblTime.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblTime.Location = new System.Drawing.Point(533, 308);
+            lblTime.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new System.Drawing.Size(73, 28);
+            lblTime.TabIndex = 7;
+            lblTime.Text = "Время:";
             // 
             // dtpTime
             // 
-            this.dtpTime.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(390, 157);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.ShowUpDown = true;
-            this.dtpTime.Size = new System.Drawing.Size(130, 25);
-            this.dtpTime.TabIndex = 8;
+            dtpTime.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            dtpTime.Location = new System.Drawing.Point(650, 302);
+            dtpTime.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            dtpTime.Name = "dtpTime";
+            dtpTime.ShowUpDown = true;
+            dtpTime.Size = new System.Drawing.Size(214, 34);
+            dtpTime.TabIndex = 8;
             // 
             // lblDuration
             // 
-            this.lblDuration.AutoSize = true;
-            this.lblDuration.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDuration.Location = new System.Drawing.Point(30, 200);
-            this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(148, 19);
-            this.lblDuration.TabIndex = 9;
-            this.lblDuration.Text = "Длительность (мин):";
+            lblDuration.AutoSize = true;
+            lblDuration.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblDuration.Location = new System.Drawing.Point(50, 385);
+            lblDuration.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDuration.Name = "lblDuration";
+            lblDuration.Size = new System.Drawing.Size(198, 28);
+            lblDuration.TabIndex = 9;
+            lblDuration.Text = "Длительность (мин):";
             // 
             // numDuration
             // 
-            this.numDuration.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numDuration.Increment = new decimal(new int[] { 15, 0, 0, 0 });
-            this.numDuration.Location = new System.Drawing.Point(190, 197);
-            this.numDuration.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
-            this.numDuration.Minimum = new decimal(new int[] { 15, 0, 0, 0 });
-            this.numDuration.Name = "numDuration";
-            this.numDuration.Size = new System.Drawing.Size(110, 25);
-            this.numDuration.TabIndex = 10;
-            this.numDuration.Value = new decimal(new int[] { 30, 0, 0, 0 });
+            numDuration.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            numDuration.Increment = new decimal(new int[] { 15, 0, 0, 0 });
+            numDuration.Location = new System.Drawing.Point(317, 379);
+            numDuration.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            numDuration.Maximum = new decimal(new int[] { 180, 0, 0, 0 });
+            numDuration.Minimum = new decimal(new int[] { 15, 0, 0, 0 });
+            numDuration.Name = "numDuration";
+            numDuration.Size = new System.Drawing.Size(183, 34);
+            numDuration.TabIndex = 10;
+            numDuration.Value = new decimal(new int[] { 30, 0, 0, 0 });
             // 
             // lblNotes
             // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblNotes.Location = new System.Drawing.Point(30, 240);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(97, 19);
-            this.lblNotes.TabIndex = 11;
-            this.lblNotes.Text = "Примечания:";
+            lblNotes.AutoSize = true;
+            lblNotes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblNotes.Location = new System.Drawing.Point(50, 462);
+            lblNotes.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblNotes.Name = "lblNotes";
+            lblNotes.Size = new System.Drawing.Size(133, 28);
+            lblNotes.TabIndex = 11;
+            lblNotes.Text = "Примечания:";
             // 
             // txtNotes
             // 
-            this.txtNotes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNotes.Location = new System.Drawing.Point(150, 237);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(370, 80);
-            this.txtNotes.TabIndex = 12;
+            txtNotes.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtNotes.Location = new System.Drawing.Point(250, 456);
+            txtNotes.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtNotes.Multiline = true;
+            txtNotes.Name = "txtNotes";
+            txtNotes.Size = new System.Drawing.Size(614, 150);
+            txtNotes.TabIndex = 12;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(250, 340);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(130, 40);
-            this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "💾 Сохранить";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSave.ForeColor = System.Drawing.Color.Black;
+            btnSave.Location = new System.Drawing.Point(417, 654);
+            btnSave.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(217, 77);
+            btnSave.TabIndex = 13;
+            btnSave.Text = "💾 Сохранить";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(390, 340);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 40);
-            this.btnCancel.TabIndex = 14;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
+            btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnCancel.ForeColor = System.Drawing.Color.White;
+            btnCancel.Location = new System.Drawing.Point(650, 654);
+            btnCancel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(217, 77);
+            btnCancel.TabIndex = 14;
+            btnCancel.Text = "Отмена";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // AppointmentEditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(550, 400);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtNotes);
-            this.Controls.Add(this.lblNotes);
-            this.Controls.Add(this.numDuration);
-            this.Controls.Add(this.lblDuration);
-            this.Controls.Add(this.dtpTime);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.cmbPatient);
-            this.Controls.Add(this.lblPatient);
-            this.Controls.Add(this.cmbDoctor);
-            this.Controls.Add(this.lblDoctor);
-            this.Controls.Add(this.panelTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AppointmentEditForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Новая запись";
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(917, 769);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(txtNotes);
+            Controls.Add(lblNotes);
+            Controls.Add(numDuration);
+            Controls.Add(lblDuration);
+            Controls.Add(dtpTime);
+            Controls.Add(lblTime);
+            Controls.Add(dtpDate);
+            Controls.Add(lblDate);
+            Controls.Add(cmbPatient);
+            Controls.Add(lblPatient);
+            Controls.Add(cmbDoctor);
+            Controls.Add(lblDoctor);
+            Controls.Add(panelTop);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "AppointmentEditForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Новая запись";
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numDuration).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Panel panelTop;

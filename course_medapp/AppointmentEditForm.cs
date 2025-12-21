@@ -118,5 +118,15 @@ namespace course_medapp.Forms
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
