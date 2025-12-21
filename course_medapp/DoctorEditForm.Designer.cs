@@ -15,270 +15,341 @@
 
         private void InitializeComponent()
         {
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lblBirthDate = new System.Windows.Forms.Label();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.lblSpecialization = new System.Windows.Forms.Label();
-            this.txtSpecialization = new System.Windows.Forms.TextBox();
-            this.lblLicense = new System.Windows.Forms.Label();
-            this.txtLicense = new System.Windows.Forms.TextBox();
-            this.lblExperience = new System.Windows.Forms.Label();
-            this.numExperience = new System.Windows.Forms.NumericUpDown();
-            this.lblDepartment = new System.Windows.Forms.Label();
-            this.cmbDepartment = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExperience)).BeginInit();
-            this.SuspendLayout();
+            panelTop = new System.Windows.Forms.Panel();
+            lblTitle = new System.Windows.Forms.Label();
+            lblFirstName = new System.Windows.Forms.Label();
+            txtFirstName = new System.Windows.Forms.TextBox();
+            lblLastName = new System.Windows.Forms.Label();
+            txtLastName = new System.Windows.Forms.TextBox();
+            lblMiddleName = new System.Windows.Forms.Label();
+            txtMiddleName = new System.Windows.Forms.TextBox();
+            lblPhone = new System.Windows.Forms.Label();
+            txtPhone = new System.Windows.Forms.TextBox();
+            lblBirthDate = new System.Windows.Forms.Label();
+            dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            lblSpecialization = new System.Windows.Forms.Label();
+            txtSpecialization = new System.Windows.Forms.TextBox();
+            lblLicense = new System.Windows.Forms.Label();
+            txtLicense = new System.Windows.Forms.TextBox();
+            lblExperience = new System.Windows.Forms.Label();
+            cmbExperience = new System.Windows.Forms.ComboBox();
+            lblDepartment = new System.Windows.Forms.Label();
+            cmbDepartment = new System.Windows.Forms.ComboBox();
+            panelButtons = new System.Windows.Forms.Panel();
+            btnSave = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            panelTop.SuspendLayout();
+            panelButtons.SuspendLayout();
+            SuspendLayout();
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.panelTop.Controls.Add(this.lblTitle);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(500, 60);
-            this.panelTop.TabIndex = 0;
+            panelTop.BackColor = System.Drawing.Color.FromArgb(135, 206, 235);
+            panelTop.Controls.Add(lblTitle);
+            panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTop.Location = new System.Drawing.Point(0, 0);
+            panelTop.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new System.Drawing.Size(1641, 115);
+            panelTop.TabIndex = 0;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(20, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(140, 30);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Новый врач";
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblTitle.ForeColor = System.Drawing.Color.Black;
+            lblTitle.Location = new System.Drawing.Point(42, 29);
+            lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new System.Drawing.Size(323, 45);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Добавление врача:";
             // 
             // lblFirstName
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblFirstName.Location = new System.Drawing.Point(30, 80);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(40, 19);
-            this.lblFirstName.TabIndex = 1;
-            this.lblFirstName.Text = "Имя:";
+            lblFirstName.AutoSize = true;
+            lblFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblFirstName.Location = new System.Drawing.Point(83, 173);
+            lblFirstName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblFirstName.Name = "lblFirstName";
+            lblFirstName.Size = new System.Drawing.Size(66, 32);
+            lblFirstName.TabIndex = 1;
+            lblFirstName.Text = "Имя:";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtFirstName.Location = new System.Drawing.Point(190, 77);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(280, 25);
-            this.txtFirstName.TabIndex = 2;
+            txtFirstName.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtFirstName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtFirstName.Location = new System.Drawing.Point(417, 163);
+            txtFirstName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new System.Drawing.Size(883, 32);
+            txtFirstName.TabIndex = 2;
             // 
             // lblLastName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblLastName.Location = new System.Drawing.Point(30, 115);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(74, 19);
-            this.lblLastName.TabIndex = 3;
-            this.lblLastName.Text = "Фамилия:";
+            lblLastName.AutoSize = true;
+            lblLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblLastName.Location = new System.Drawing.Point(83, 279);
+            lblLastName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblLastName.Name = "lblLastName";
+            lblLastName.Size = new System.Drawing.Size(118, 32);
+            lblLastName.TabIndex = 3;
+            lblLastName.Text = "Фамилия:";
             // 
             // txtLastName
             // 
-            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtLastName.Location = new System.Drawing.Point(190, 112);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(280, 25);
-            this.txtLastName.TabIndex = 4;
+            txtLastName.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtLastName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtLastName.Location = new System.Drawing.Point(417, 269);
+            txtLastName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new System.Drawing.Size(883, 32);
+            txtLastName.TabIndex = 4;
+            // 
+            // lblMiddleName
+            // 
+            lblMiddleName.AutoSize = true;
+            lblMiddleName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblMiddleName.Location = new System.Drawing.Point(83, 385);
+            lblMiddleName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblMiddleName.Name = "lblMiddleName";
+            lblMiddleName.Size = new System.Drawing.Size(122, 32);
+            lblMiddleName.TabIndex = 5;
+            lblMiddleName.Text = "Отчество:";
+            // 
+            // txtMiddleName
+            // 
+            txtMiddleName.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtMiddleName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtMiddleName.Location = new System.Drawing.Point(417, 375);
+            txtMiddleName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtMiddleName.Name = "txtMiddleName";
+            txtMiddleName.Size = new System.Drawing.Size(883, 32);
+            txtMiddleName.TabIndex = 6;
             // 
             // lblPhone
             // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblPhone.Location = new System.Drawing.Point(30, 150);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(69, 19);
-            this.lblPhone.TabIndex = 5;
-            this.lblPhone.Text = "Телефон:";
+            lblPhone.AutoSize = true;
+            lblPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblPhone.Location = new System.Drawing.Point(83, 490);
+            lblPhone.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new System.Drawing.Size(115, 32);
+            lblPhone.TabIndex = 7;
+            lblPhone.Text = "Телефон:";
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtPhone.Location = new System.Drawing.Point(190, 147);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(280, 25);
-            this.txtPhone.TabIndex = 6;
+            txtPhone.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtPhone.Location = new System.Drawing.Point(417, 481);
+            txtPhone.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new System.Drawing.Size(883, 32);
+            txtPhone.TabIndex = 8;
             // 
             // lblBirthDate
             // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblBirthDate.Location = new System.Drawing.Point(30, 185);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(110, 19);
-            this.lblBirthDate.TabIndex = 7;
-            this.lblBirthDate.Text = "Дата рождения:";
+            lblBirthDate.AutoSize = true;
+            lblBirthDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblBirthDate.Location = new System.Drawing.Point(83, 596);
+            lblBirthDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblBirthDate.Name = "lblBirthDate";
+            lblBirthDate.Size = new System.Drawing.Size(189, 32);
+            lblBirthDate.TabIndex = 9;
+            lblBirthDate.Text = "Дата рождения:";
             // 
             // dtpBirthDate
             // 
-            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDate.Location = new System.Drawing.Point(190, 182);
-            this.dtpBirthDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
-            this.dtpBirthDate.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(280, 25);
-            this.dtpBirthDate.TabIndex = 8;
-            this.dtpBirthDate.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            dtpBirthDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(224, 224, 224);
+            dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dtpBirthDate.Location = new System.Drawing.Point(417, 587);
+            dtpBirthDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new System.Drawing.Size(881, 39);
+            dtpBirthDate.TabIndex = 10;
             // 
             // lblSpecialization
             // 
-            this.lblSpecialization.AutoSize = true;
-            this.lblSpecialization.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblSpecialization.Location = new System.Drawing.Point(30, 220);
-            this.lblSpecialization.Name = "lblSpecialization";
-            this.lblSpecialization.Size = new System.Drawing.Size(113, 19);
-            this.lblSpecialization.TabIndex = 9;
-            this.lblSpecialization.Text = "Специализация:";
+            lblSpecialization.AutoSize = true;
+            lblSpecialization.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblSpecialization.Location = new System.Drawing.Point(83, 702);
+            lblSpecialization.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblSpecialization.Name = "lblSpecialization";
+            lblSpecialization.Size = new System.Drawing.Size(191, 32);
+            lblSpecialization.TabIndex = 11;
+            lblSpecialization.Text = "Специализация:";
             // 
             // txtSpecialization
             // 
-            this.txtSpecialization.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtSpecialization.Location = new System.Drawing.Point(190, 217);
-            this.txtSpecialization.Name = "txtSpecialization";
-            this.txtSpecialization.Size = new System.Drawing.Size(280, 25);
-            this.txtSpecialization.TabIndex = 10;
+            txtSpecialization.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtSpecialization.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtSpecialization.Location = new System.Drawing.Point(417, 692);
+            txtSpecialization.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtSpecialization.Name = "txtSpecialization";
+            txtSpecialization.Size = new System.Drawing.Size(883, 32);
+            txtSpecialization.TabIndex = 12;
             // 
             // lblLicense
             // 
-            this.lblLicense.AutoSize = true;
-            this.lblLicense.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblLicense.Location = new System.Drawing.Point(30, 255);
-            this.lblLicense.Name = "lblLicense";
-            this.lblLicense.Size = new System.Drawing.Size(133, 19);
-            this.lblLicense.TabIndex = 11;
-            this.lblLicense.Text = "Номер лицензии:";
+            lblLicense.AutoSize = true;
+            lblLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblLicense.Location = new System.Drawing.Point(83, 808);
+            lblLicense.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblLicense.Name = "lblLicense";
+            lblLicense.Size = new System.Drawing.Size(151, 32);
+            lblLicense.TabIndex = 13;
+            lblLicense.Text = "N лицензии:";
             // 
             // txtLicense
             // 
-            this.txtLicense.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtLicense.Location = new System.Drawing.Point(190, 252);
-            this.txtLicense.Name = "txtLicense";
-            this.txtLicense.Size = new System.Drawing.Size(280, 25);
-            this.txtLicense.TabIndex = 12;
+            txtLicense.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            txtLicense.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtLicense.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtLicense.Location = new System.Drawing.Point(417, 798);
+            txtLicense.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            txtLicense.Name = "txtLicense";
+            txtLicense.Size = new System.Drawing.Size(883, 32);
+            txtLicense.TabIndex = 14;
             // 
             // lblExperience
             // 
-            this.lblExperience.AutoSize = true;
-            this.lblExperience.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblExperience.Location = new System.Drawing.Point(30, 290);
-            this.lblExperience.Name = "lblExperience";
-            this.lblExperience.Size = new System.Drawing.Size(83, 19);
-            this.lblExperience.TabIndex = 13;
-            this.lblExperience.Text = "Стаж (лет):";
+            lblExperience.AutoSize = true;
+            lblExperience.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblExperience.Location = new System.Drawing.Point(83, 913);
+            lblExperience.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblExperience.Name = "lblExperience";
+            lblExperience.Size = new System.Drawing.Size(131, 32);
+            lblExperience.TabIndex = 15;
+            lblExperience.Text = "Стаж (лет):";
             // 
-            // numExperience
+            // cmbExperience
             // 
-            this.numExperience.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numExperience.Location = new System.Drawing.Point(190, 287);
-            this.numExperience.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numExperience.Name = "numExperience";
-            this.numExperience.Size = new System.Drawing.Size(280, 25);
-            this.numExperience.TabIndex = 14;
+            cmbExperience.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            cmbExperience.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbExperience.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cmbExperience.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cmbExperience.FormattingEnabled = true;
+            cmbExperience.Location = new System.Drawing.Point(417, 904);
+            cmbExperience.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            cmbExperience.Name = "cmbExperience";
+            cmbExperience.Size = new System.Drawing.Size(881, 40);
+            cmbExperience.TabIndex = 16;
             // 
             // lblDepartment
             // 
-            this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblDepartment.Location = new System.Drawing.Point(30, 325);
-            this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(85, 19);
-            this.lblDepartment.TabIndex = 15;
-            this.lblDepartment.Text = "Отделение:";
+            lblDepartment.AutoSize = true;
+            lblDepartment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblDepartment.Location = new System.Drawing.Point(83, 1019);
+            lblDepartment.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            lblDepartment.Name = "lblDepartment";
+            lblDepartment.Size = new System.Drawing.Size(140, 32);
+            lblDepartment.TabIndex = 17;
+            lblDepartment.Text = "Отделение:";
             // 
             // cmbDepartment
             // 
-            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbDepartment.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Location = new System.Drawing.Point(190, 322);
-            this.cmbDepartment.Name = "cmbDepartment";
-            this.cmbDepartment.Size = new System.Drawing.Size(280, 25);
-            this.cmbDepartment.TabIndex = 16;
+            cmbDepartment.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            cmbDepartment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cmbDepartment.FormattingEnabled = true;
+            cmbDepartment.Location = new System.Drawing.Point(417, 1010);
+            cmbDepartment.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            cmbDepartment.Name = "cmbDepartment";
+            cmbDepartment.Size = new System.Drawing.Size(881, 40);
+            cmbDepartment.TabIndex = 18;
+            // 
+            // panelButtons
+            // 
+            panelButtons.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
+            panelButtons.Controls.Add(btnSave);
+            panelButtons.Controls.Add(btnCancel);
+            panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            panelButtons.Location = new System.Drawing.Point(0, 1051);
+            panelButtons.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            panelButtons.Name = "panelButtons";
+            panelButtons.Size = new System.Drawing.Size(1641, 135);
+            panelButtons.TabIndex = 19;
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(190, 370);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(130, 40);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "💾 Сохранить";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            btnSave.BackColor = System.Drawing.Color.FromArgb(224, 224, 224);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSave.Location = new System.Drawing.Point(967, 29);
+            btnSave.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new System.Drawing.Size(267, 77);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "Сохранить";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(140)))), ((int)(((byte)(141)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(340, 370);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 40);
-            this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "Отмена";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.BackColor = System.Drawing.Color.FromArgb(255, 87, 34);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnCancel.ForeColor = System.Drawing.Color.White;
+            btnCancel.Location = new System.Drawing.Point(1325, 29);
+            btnCancel.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(267, 77);
+            btnCancel.TabIndex = 1;
+            btnCancel.Text = "Отмена";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // DoctorEditForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(500, 430);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cmbDepartment);
-            this.Controls.Add(this.lblDepartment);
-            this.Controls.Add(this.numExperience);
-            this.Controls.Add(this.lblExperience);
-            this.Controls.Add(this.txtLicense);
-            this.Controls.Add(this.lblLicense);
-            this.Controls.Add(this.txtSpecialization);
-            this.Controls.Add(this.lblSpecialization);
-            this.Controls.Add(this.dtpBirthDate);
-            this.Controls.Add(this.lblBirthDate);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.lblPhone);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.panelTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "DoctorEditForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Врач";
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numExperience)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(1667, 1050);
+            Controls.Add(panelButtons);
+            Controls.Add(cmbDepartment);
+            Controls.Add(lblDepartment);
+            Controls.Add(cmbExperience);
+            Controls.Add(lblExperience);
+            Controls.Add(txtLicense);
+            Controls.Add(lblLicense);
+            Controls.Add(txtSpecialization);
+            Controls.Add(lblSpecialization);
+            Controls.Add(dtpBirthDate);
+            Controls.Add(lblBirthDate);
+            Controls.Add(txtPhone);
+            Controls.Add(lblPhone);
+            Controls.Add(txtMiddleName);
+            Controls.Add(lblMiddleName);
+            Controls.Add(txtLastName);
+            Controls.Add(lblLastName);
+            Controls.Add(txtFirstName);
+            Controls.Add(lblFirstName);
+            Controls.Add(panelTop);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "DoctorEditForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Врач";
+            Load += DoctorEditForm_Load;
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            panelButtons.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Panel panelTop;
@@ -287,6 +358,8 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.Label lblMiddleName;
+        private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblBirthDate;
@@ -296,9 +369,10 @@
         private System.Windows.Forms.Label lblLicense;
         private System.Windows.Forms.TextBox txtLicense;
         private System.Windows.Forms.Label lblExperience;
-        private System.Windows.Forms.NumericUpDown numExperience;
+        private System.Windows.Forms.ComboBox cmbExperience;
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
     }

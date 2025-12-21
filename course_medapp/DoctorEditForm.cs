@@ -24,8 +24,9 @@ namespace course_medapp.Forms
             dataManager = DataManager.Instance;
             isEditMode = false;
             this.Text = "Добавить врача";
-            lblTitle.Text = "Новый врач";
+            lblTitle.Text = "Добавление врача:";
             LoadDepartments();
+            LoadExperience();
         }
 
         public DoctorEditForm(Doctor existingDoctor)
@@ -35,8 +36,9 @@ namespace course_medapp.Forms
             doctor = existingDoctor;
             isEditMode = true;
             this.Text = "Редактировать врача";
-            lblTitle.Text = "Редактирование врача";
+            lblTitle.Text = "Редактирование врача:";
             LoadDepartments();
+            LoadExperience();
             LoadDoctorData();
         }
 
@@ -53,15 +55,26 @@ namespace course_medapp.Forms
             cmbDepartment.SelectedIndex = 0;
         }
 
+        private void LoadExperience()
+        {
+            cmbExperience.Items.Clear();
+            for (int i = 0; i <= 50; i++)
+            {
+                cmbExperience.Items.Add(i.ToString());
+            }
+            cmbExperience.SelectedIndex = 0;
+        }
+
         private void LoadDoctorData()
         {
             txtFirstName.Text = doctor.FirstName;
             txtLastName.Text = doctor.LastName;
+            txtMiddleName.Text = doctor.MiddleName ?? "";
             txtPhone.Text = doctor.PhoneNumber;
             dtpBirthDate.Value = doctor.DateOfBirth;
             txtSpecialization.Text = doctor.Specialization;
             txtLicense.Text = doctor.LicenseNumber;
-            numExperience.Value = doctor.ExperienceYears;
+            cmbExperience.SelectedIndex = doctor.ExperienceYears;
 
             // Загружаем отделение
             if (!string.IsNullOrEmpty(doctor.DepartmentId))
@@ -97,11 +110,12 @@ namespace course_medapp.Forms
                     // Редактирование существующего врача
                     doctor.FirstName = txtFirstName.Text.Trim();
                     doctor.LastName = txtLastName.Text.Trim();
+                    doctor.MiddleName = string.IsNullOrWhiteSpace(txtMiddleName.Text) ? null : txtMiddleName.Text.Trim();
                     doctor.PhoneNumber = txtPhone.Text.Trim();
                     doctor.DateOfBirth = dtpBirthDate.Value;
                     doctor.Specialization = txtSpecialization.Text.Trim();
                     doctor.LicenseNumber = txtLicense.Text.Trim();
-                    doctor.ExperienceYears = (int)numExperience.Value;
+                    doctor.ExperienceYears = cmbExperience.SelectedIndex;
                     doctor.DepartmentId = departmentId;
 
                     dataManager.UpdateDoctor(doctor);
@@ -118,8 +132,9 @@ namespace course_medapp.Forms
                         dtpBirthDate.Value,
                         txtSpecialization.Text.Trim(),
                         txtLicense.Text.Trim(),
-                        (int)numExperience.Value,
-                        departmentId
+                        cmbExperience.SelectedIndex,
+                        departmentId,
+                        string.IsNullOrWhiteSpace(txtMiddleName.Text) ? null : txtMiddleName.Text.Trim()
                     );
 
                     dataManager.AddDoctor(newDoctor);
@@ -197,14 +212,6 @@ namespace course_medapp.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            if (numExperience.Value < 0)
-            {
-                MessageBox.Show("Стаж не может быть отрицательным", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
             return true;
         }
 
@@ -212,6 +219,11 @@ namespace course_medapp.Forms
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void DoctorEditForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
